@@ -1,0 +1,21 @@
+{
+    "_startInitPage-texts-en_US":"",
+        "cardApresentation": "- Welcome to my personal website, here you will find my private universe, you will get to know me and see what I have worked and am working on. \n You will also see what I studied and am studying! All this to be able to be comfortable if you want to hire me or partner!",
+    "_endtInitPage-texts-en_US":"",
+
+    "_startHomePage-texts-en_US":"",
+        "apresentation": "-Hello Welcome to my personal website! My name is Lucas, I'm 21 years old and I love technology! \n -Since I was a child I wanted to know how things in technology work, how apps, websites and games are made, and here I am now, with the first website that I created myself in search of evolving more and more.",
+
+        "jump_to_portfolio":"If you want to know some Works I've done, just click on the button below ⬇ \n If you want to know a little more about me, just scroll down a little further",
+
+        "more_about_me": "-As you already know, my name is Lucas, and you already know that I am passionate about Technology. Information Technology is a very big world and if I could I would learn every possible area in IT! I am passionate about Artificial Intelligence, Information Security and robotics which I am also fascinated with, Hardware issues I am also very interested in. But I know that I have to be down to earth and specialize in one area or even two who knows, lol. \n -Now I'm focusing on learning how to develop cross-platform apps, but before that I was studying information security, I learned a lot of basic things about it, and I think every programmer at least had to understand the basics of information security to be able to program apps safer for their users, but that's another conversation. Going forward I want to specialize in security for mobile applications and android systems, these are my plans for now.",
+    "_endtHomePage-texts-en_US":"",
+
+    "_startPortfolioPage-texts-en_US":"",
+        "desc_video_1":"- A personal project of mine, where I'm slowly making a Football Coach Simulator game ⚽. \n - Why am I doing it little by little? I'm doing it little by little because I still have a lot to learn, and as I learn, more things I add to the game. At the moment I'm doing it 'alone' which makes the process slower, I put it alone in quotes because I'm getting help from a friend I met and when I can't solve a code problem he gives me strength, and with that I'm learning each again, so when I say I'm doing it alone it's because I still don't have a team putting ideas and code together with me. \n - If you want to know more about the Project, just click on the 'FootBall Manager' button above.",
+
+        "desc_video_2":"- A project made together with the professor of a course I took, serves as a portfolio for me to show the things I learned doing this project, the code is not 100% the same as the professor's because I changed a few things, but for sure I'm going to make a shop 2.0 later with a code 100% mine, if you want to know more about this project and know what I learned doing it just click on the button above written 'Shop App'",
+        
+    "_endPortfolioPage-texts-en_US":""
+   
+}

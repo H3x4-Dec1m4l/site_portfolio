@@ -1,0 +1,25 @@
+{
+    
+    "_startInitPage-texts-pt_BR":"",
+        "cardApresentation": "- Seja bem vindo ao meu site pessoal, aqui você irá encontrar meu universo particular, vai me conhecer e ver no que já trabalhei e estou trabalhando. \n Irá também ver o que estudei e estou estudando! Tudo isso para poder ficar confortável caso queira me contratar ou fazer parceria!",
+    "_endtInitPage-texts-pt_BR":"",
+
+
+    "_startHomePage-texts-pt_BR":"",
+        "apresentation": "-Olá Seja bem vindo ao meu site pessoal! Me chamo Lucas, Tenho 21 anos e Amo Tecnologia! \n -Dês de criança queria saber como as coisas em tecnologia funcionam, como é feito os apps, Sites e jogos, e cá estou agora, com o primeiro site que eu mesmo criei em busca de evoluir cada vez mais.",
+
+        "jump_to_portfolio":"Se quiser conhecer uns Trabalhos que já fiz, é só clicar no botão que está aqui a baixo ⬇ \n Caso queira saber um pouco mais sobre mim é só descer um pouquinho mais",
+
+        "more_about_me": " -Como você já sabe me chamo Lucas, e já sabe que sou apaixonado por Tecnologia. Tecnologia da Informação é um mundo muito grande e se eu pudesse aprenderia cada área possível existente em TI! Sou apaixonado por Inteligência Artificial, Segurança da informação e robótica que também sou fascinado, questões de Hardware também tenho bastante interesse. Mas sei que tenho que ter pé no chão e me especializar em uma área ou até duas quem sabe, rsrs. \n -Agora estou focando em aprender a desenvolver apps em multiplataforma, mas antes disso eu estava estudando segurança da informação, aprendi bastante coisas básicas sobre, e acho que todo programador pelo menos tinha que entender a base da segurança da informação para poder programar apps mais seguros para seus usuários, mas isso já é outra conversa. Mais para frente quero me especializar em segurança de aplicativos mobile e sistemas android, esses são meus planos por enquanto.",
+
+    "_endtHomePage-texts-pt_BR":"",
+
+    "_startPortfolioPage-texts-pt_BR":"",
+    "desc_video_1":"- Um Projeto pessoal meu, onde estou fazendo aos poucos um joguinho Simulador de Técnico de Futebol ⚽. \n - Por que estou fazendo aos poucos? Estou fazendo aos poucos porque ainda tenho muito a aprender, e conforme eu vou aprendendo, mais coisas vou adicionando ao game. No momento estou fazendo 'sozinho' o que deixa o processo mais lento, coloquei sozinho entre aspas pois estou recebendo uma ajuda de um amigo que conheci e quando não consigo resolver um problema de código ele me da uma força, e com isso vou aprendendo cada vez mais, então quando eu digo que estou fazendo sozinho é porque ainda não tenho uma equipe montando ideias e código junto comigo. \n - Se quiser saber mais sobre o Projeto é só clicar no botão 'FootBall Manager' que se encontra a cima.",
+
+    "desc_video_2":"- Um projeto feito junto com o professor de um curso que eu fiz, serve de portfólio para eu mostrar as coisas que eu aprendi fazendo esse projeto, o codigo não está 100% igual a do professor pois eu mudei umas coisinhas mínimas, mas com certeza vou fazer um shop 2.0 mais pra frente com um codigo 100% meu, se quiser saber mais sobre esse projeto e saber o que eu aprendi fazendo ele é só clicar no botão a cima escrito 'Shop App'",
+    
+    "_endPortfolioPage-texts-pt_BR":""
+    
+   
+}

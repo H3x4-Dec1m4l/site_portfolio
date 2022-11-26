@@ -1,0 +1,23 @@
+{
+    "_startGlobalKeys-strings-pt_BR":"",
+        "change_language":"Change to English",
+    "_endtGlobalKeys-strings-pt_BR":"",
+
+    "startInitialPage-titles-en_US": "",
+    "bridge_to_entry": "Portal de Entrada",
+        "get_to_know_me_better": "Me conhecer melhor",
+        "see_my_works": "Ver meus trabalhos",
+    "endtInitialPage-titles-en_US": "",
+    
+    "_startHomePage-titles-pt_BR":"",
+        "title": "Site Pessoal Portfólio",
+        "subtitle": "Site Pessoal",
+        "see_my_portfolio":"Ver Meu Portfólio",
+    "_endtHomePage-titles-pt_BR":"",
+
+    "_startPortfolioPage-titles-pt_BR":"",
+        "my_portfolio":"Meu Portfólio",
+    "_endPortfolioPage-titles-pt_BR":""
+    
+    
+}

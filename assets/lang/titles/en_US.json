@@ -1,0 +1,23 @@
+{
+    "_startGlobalKeys-strings-en_US":"",
+        "change_language": "Trocar Para Português",
+    "_endtGlobalKeys-strings-en_US":"",
+
+    "startInitialPage-titles-en_US": "",
+        "bridge_to_entry": "Bridge to Entry",
+        "get_to_know_me_better": "Get To Know Me Better",
+        "see_my_works": "See my Works",
+    "endtInitialPage-titles-en_US": "",
+
+    "_startHomePage-titles-en_US":"",
+        "title": "Personal Website Portfolio",
+        "subtitle": "Personal Website",
+        "see_my_portfolio":"See My Portfolio",
+    "_endtHomePage-titles-en_US":"",
+
+    "_startPortfolioPage-titles-en_US":"",
+        "my_portfolio":"My Portfolio",
+    "_endPortfolioPage-titles-en_US":""
+    
+    
+}
