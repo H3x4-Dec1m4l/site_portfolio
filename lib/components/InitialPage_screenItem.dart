@@ -115,8 +115,9 @@ class _InitialPageScreenItemState extends State<InitialPageScreenItem> {
                     child: Text(
                       'cardApresentation'.i18n(),
                       style: TextStyle(
-                        fontSize: resolution.ISdesktop() ? 25 : resolution.ISmobile() ? 22 : 0,
-                        fontFamily: 'Courgette',
+                        fontSize: resolution.ISdesktop() ? 26 : resolution.ISmobile() ? 22 : 0,
+                        fontFamily: 'Philosopher',
+                        fontWeight: FontWeight.w700
                       ),
                     ),
                   ),
