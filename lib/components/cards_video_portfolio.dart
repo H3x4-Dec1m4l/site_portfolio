@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import '../utils/routes.dart';
 import 'package:localization/localization.dart';
+import 'package:multi_responsive/models/screen_resolution_model.dart';
 
 class CardVideoPortfolio extends StatefulWidget {
   const CardVideoPortfolio({super.key});
@@ -44,197 +45,239 @@ class _CardVideoPortfolioState extends State<CardVideoPortfolio> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Card(
-        color: Colors.black12,
-        child: Column(
-          children: [
-            Container(
-              width: double.infinity,
-              height: 1800,
-              child: Column(
-                // mainAxisAlignment: MainAxisAlignment.spaceAround,
-                // crossAxisAlignment: CrossAxisAlignment.end,
-                children: <Widget>[
-                  //Video portfolio Fooatball_Manager
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        height: 300,
-                        width: 500,
-                        child: Stack(
-                          children: [
-                            ClipRRect(
-                              borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(15),
-                                  topRight: Radius.circular(15),
-                                  bottomLeft: Radius.circular(20),
-                                  bottomRight: Radius.circular(20)),
-                              child: SizedBox.expand(
-                                child: FittedBox(
-                                  fit: BoxFit.cover,
-                                  child: SizedBox(
-                                    height: _videoPlayerControllerOne
-                                            ?.value.size.height ??
-                                        0,
-                                    width: _videoPlayerControllerOne
-                                            ?.value.size.width ??
-                                        0,
-                                    child:
-                                        VideoPlayer(_videoPlayerControllerOne!),
+    return LayoutBuilder(builder: (_, constraints) {
+      var resolution = PlatformScreen(
+          width: constraints.maxWidth, height: constraints.maxHeight);
+      return resolution.ISdesktop()
+          ? SizedBox(
+              child: Card(
+                color: Colors.black12,
+                child: Column(
+                  children: [
+                    Container(
+                      width: double.infinity,
+                      height: 1800,
+                      child: Column(
+                        // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        // crossAxisAlignment: CrossAxisAlignment.end,
+                        children: <Widget>[
+                          //Video portfolio Fooatball_Manager
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                height: 300,
+                                width: 500,
+                                child: Stack(
+                                  children: [
+                                    ClipRRect(
+                                      borderRadius: const BorderRadius.only(
+                                          topLeft: Radius.circular(15),
+                                          topRight: Radius.circular(15),
+                                          bottomLeft: Radius.circular(20),
+                                          bottomRight: Radius.circular(20)),
+                                      child: SizedBox.expand(
+                                        child: FittedBox(
+                                          fit: BoxFit.cover,
+                                          child: SizedBox(
+                                            height: _videoPlayerControllerOne
+                                                    ?.value.size.height ??
+                                                0,
+                                            width: _videoPlayerControllerOne
+                                                    ?.value.size.width ??
+                                                0,
+                                            child: VideoPlayer(
+                                                _videoPlayerControllerOne!),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              //Video portfolio Shop
+
+                              Container(
+                                height: 300,
+                                width: 500,
+                                child: Stack(
+                                  children: [
+                                    ClipRRect(
+                                      borderRadius: const BorderRadius.only(
+                                          topLeft: Radius.circular(20),
+                                          topRight: Radius.circular(20),
+                                          bottomLeft: Radius.circular(20),
+                                          bottomRight: Radius.circular(20)),
+                                      child: Card(
+                                        child: SizedBox.expand(
+                                          child: FittedBox(
+                                            fit: BoxFit.cover,
+                                            child: SizedBox(
+                                              height: _videoPlayerControllerTwo
+                                                      ?.value.size.height ??
+                                                  0,
+                                              width: _videoPlayerControllerTwo
+                                                      ?.value.size.width ??
+                                                  0,
+                                              child: VideoPlayer(
+                                                  _videoPlayerControllerTwo!),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              ElevatedButton(
+                                onPressed: () {},
+                                style: ButtonStyle(
+                                  backgroundColor: MaterialStateProperty.all(
+                                    const Color.fromARGB(134, 0, 155, 202),
+                                  ),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsets.all(20),
+                                  child: Row(
+                                    children: [
+                                      Row(
+                                        children: const [
+                                          Text(
+                                            'FootBall Manager',
+                                            style: TextStyle(
+                                                fontFamily: 'Philosopher',
+                                                fontWeight: FontWeight.w800),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
+                              ElevatedButton(
+                                onPressed: () {},
+                                style: ButtonStyle(
+                                  backgroundColor: MaterialStateProperty.all(
+                                    const Color.fromARGB(134, 0, 155, 202),
+                                  ),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsets.all(20),
+                                  child: Row(
+                                    children: [
+                                      Row(
+                                        children: const [
+                                          Text(
+                                            'Shop App',
+                                            style: TextStyle(
+                                                fontFamily: 'Philosopher',
+                                                fontWeight: FontWeight.w800),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          // SizedBox(height: 200,),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Column(
+                                children: <Widget>[
+                                  Container(
+                                    // height: 300,
+                                    width: 400,
+                                    child: Card(
+                                      color: Colors.black12,
+                                      child: Text(
+                                        'desc_video_1'.i18n(),
+                                        style: const TextStyle(
+                                            fontFamily: 'Philosopher',
+                                            fontSize: 16),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                children: <Widget>[
+                                  Container(
+                                    // height: 300,
+                                    width: 400,
+                                    child: Card(
+                                      color: Colors.black12,
+                                      child: Text(
+                                        'desc_video_2'.i18n(),
+                                        style: const TextStyle(
+                                            fontFamily: 'Philosopher',
+                                            fontSize: 16),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
-
-                      //Video portfolio Shop
-                      InkWell(
-                        onTap: () {
-                          Navigator.of(context).pushNamed(AppRoutes.HOME_PAGE);
-                        },
-                        child: Container(
+                    ),
+                  ],
+                ),
+              ),
+            )
+          : resolution.ISmobile()
+              ? Container(
+                  width: constraints.maxWidth,
+                  height: 1800,
+                  child: Column(
+                    children: [
+                      Container(
                           height: 300,
                           width: 500,
-                          child: Stack(
-                            children: [
-                              ClipRRect(
-                                borderRadius: const BorderRadius.only(
-                                    topLeft: Radius.circular(20),
-                                    topRight: Radius.circular(20),
-                                    bottomLeft: Radius.circular(20),
-                                    bottomRight: Radius.circular(20)),
-                                child: Card(
+                          child: Card(
+                            color: Colors.black38,
+                            child: Stack(
+                              children: [
+                                ClipRRect(
+                                  borderRadius: const BorderRadius.only(
+                                      topLeft: Radius.circular(15),
+                                      topRight: Radius.circular(15),
+                                      bottomLeft: Radius.circular(20),
+                                      bottomRight: Radius.circular(20)),
                                   child: SizedBox.expand(
                                     child: FittedBox(
                                       fit: BoxFit.cover,
                                       child: SizedBox(
-                                        height: _videoPlayerControllerTwo
+                                        height: _videoPlayerControllerOne
                                                 ?.value.size.height ??
                                             0,
-                                        width: _videoPlayerControllerTwo
+                                        width: _videoPlayerControllerOne
                                                 ?.value.size.width ??
                                             0,
                                         child: VideoPlayer(
-                                            _videoPlayerControllerTwo!),
+                                            _videoPlayerControllerOne!),
                                       ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(
-                            const Color.fromARGB(134, 0, 155, 202),
-                          ),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.all(20),
-                          child: Row(
-                            children: [
-                              Row(
-                                children: const [
-                                  Text(
-                                    'FootBall Manager',
-                                    style: TextStyle(
-                                        fontFamily: 'Philosopher',
-                                        fontWeight: FontWeight.w800),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(
-                            const Color.fromARGB(134, 0, 155, 202),
-                          ),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.all(20),
-                          child: Row(
-                            children: [
-                              Row(
-                                children: const [
-                                  Text(
-                                    'Shop App',
-                                    style: TextStyle(
-                                        fontFamily: 'Philosopher',
-                                        fontWeight: FontWeight.w800),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  // SizedBox(height: 200,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Column(
-                        children: <Widget>[
-                          Container(
-                            // height: 300,
-                            width: 400,
-                            child: Card(
-                              color: Colors.black12,
-                              child: Text(
-                                'desc_video_1'.i18n(),
-                                style: const TextStyle(
-                                  fontFamily: 'Philosopher',
-                                   fontSize: 16
-                                ),
-                              ),
+                              ],
                             ),
-                          ),
-                        ],
-                      ),
-                      Column(
-                        children: <Widget>[
-                          Container(
-                            // height: 300,
-                            width: 400,
-                            child: Card(
-                              color: Colors.black12,
-                              child: Text(
-                                'desc_video_2'.i18n(),
-                                style: const TextStyle(
-                                    fontFamily: 'Philosopher',
-                                    fontSize: 16
-                                  ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                          )),
                     ],
                   ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+                )
+              : Container(
+                  child: Center(child: Text('Error')),
+                );
+    });
   }
 }

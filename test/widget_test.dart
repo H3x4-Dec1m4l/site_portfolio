@@ -6,7 +6,6 @@ import 'package:my_site_portfolio/main.dart';
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     await tester.pumpWidget( MyHomePage());
-    await tester.pumpWidget(MyHomePage());
   expect(tester.takeException(), null);
     // expect(find.text('0'), findsOneWidget);
     // expect(find.text('1'), findsNothing);
