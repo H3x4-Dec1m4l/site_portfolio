@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_site_portfolio/main.dart';
+import 'package:my_site_portfolio/utils/linksExternos.dart';
 import 'package:my_site_portfolio/utils/routes.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:video_player/video_player.dart';
 import 'package:localization/localization.dart';
 import 'package:multi_responsive/models/screen_resolution_model.dart';
@@ -38,8 +40,8 @@ class _InitialPageScreenItemState extends State<InitialPageScreenItem> {
   Widget build(BuildContext context) {
     var locale = Localizations.localeOf(context);
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 1,
-      width: MediaQuery.of(context).size.width * 1,
+      // height: MediaQuery.of(context).size.height * 1,
+      // width: MediaQuery.of(context).size.width * 1,
       child: LayoutBuilder(builder: (_, constraints) {
         var resolution = PlatformScreen(
             width: constraints.maxWidth, height: constraints.maxHeight);
@@ -58,13 +60,17 @@ class _InitialPageScreenItemState extends State<InitialPageScreenItem> {
             ),
             //Botão troca de linguagem
             Positioned(
-              //  height: 50,
+              height: resolution.ISdesktop()
+                  ? 0
+                  : resolution.ISmobile()
+                      ? constraints.maxHeight * .08
+                      : 0,
               // width: 50,
               top: 25,
               left: resolution.ISdesktop()
                   ? 1000
                   : resolution.ISmobile()
-                      ? 160
+                      ? constraints.maxWidth * .25 /* 160 */
                       : 20,
               child: Container(
                 child: ElevatedButton(
@@ -77,8 +83,13 @@ class _InitialPageScreenItemState extends State<InitialPageScreenItem> {
                   },
                   child: Text(
                     'change_language'.i18n(),
-                    style: const TextStyle(
-                        fontFamily: 'Permanent Marker', fontSize: 20),
+                    style: TextStyle(
+                        fontFamily: 'Permanent Marker',
+                        fontSize: resolution.ISdesktop()
+                            ? 20
+                            : resolution.ISmobile()
+                                ? 16
+                                : 0),
                   ),
                 ),
               ),
@@ -90,23 +101,23 @@ class _InitialPageScreenItemState extends State<InitialPageScreenItem> {
               bottom: resolution.ISdesktop()
                   ? 200
                   : resolution.ISmobile()
-                      ? 200
+                      ? constraints.maxHeight * .27
                       : 0,
               right: resolution.ISdesktop()
                   ? 800
                   : resolution.ISmobile()
-                      ? 110
+                      ? constraints.maxWidth * .08 /* 110 */
                       : 0,
               child: Container(
                 height: resolution.ISdesktop()
                     ? constraints.maxHeight * .45
                     : resolution.ISmobile()
-                        ? 350
+                        ? constraints.maxHeight * .45 /* 350 */
                         : 0,
                 width: resolution.ISdesktop()
                     ? constraints.maxWidth * .30
                     : resolution.ISmobile()
-                        ? 280
+                        ? constraints.maxWidth * .90 /* 280 */
                         : 0,
                 child: Card(
                   elevation: 9,
@@ -115,10 +126,13 @@ class _InitialPageScreenItemState extends State<InitialPageScreenItem> {
                     child: Text(
                       'cardApresentation'.i18n(),
                       style: TextStyle(
-                        fontSize: resolution.ISdesktop() ? 26 : resolution.ISmobile() ? 22 : 0,
-                        fontFamily: 'Philosopher',
-                        fontWeight: FontWeight.w700
-                      ),
+                          fontSize: resolution.ISdesktop()
+                              ? 26
+                              : resolution.ISmobile()
+                                  ? 22
+                                  : 0,
+                          fontFamily: 'Philosopher',
+                          fontWeight: FontWeight.w700),
                     ),
                   ),
                 ),
@@ -131,12 +145,12 @@ class _InitialPageScreenItemState extends State<InitialPageScreenItem> {
               width: resolution.ISdesktop()
                   ? 400
                   : resolution.ISmobile()
-                      ? 200
+                      ? constraints.maxHeight * .35 /* 200 */
                       : 0,
               bottom: resolution.ISdesktop()
                   ? 400
                   : resolution.ISmobile()
-                      ? 60
+                      ? constraints.maxHeight * .0001 /* 60 */
                       : 0,
               right: resolution.ISdesktop()
                   ? 500
@@ -148,7 +162,7 @@ class _InitialPageScreenItemState extends State<InitialPageScreenItem> {
                   //botão me conhecer melhor
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).pushNamed(AppRoutes.HOME_PAGE);
+                      /* Navigator.of(context).pushNamed(AppRoutes.HOME_PAGE); */
                     },
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
@@ -157,7 +171,7 @@ class _InitialPageScreenItemState extends State<InitialPageScreenItem> {
                       'get_to_know_me_better'.i18n(),
                       style: const TextStyle(
                         fontFamily: 'Permanent Marker',
-                        fontSize: 15,
+                        fontSize: 14,
                       ),
                     ),
                   ),
@@ -165,7 +179,7 @@ class _InitialPageScreenItemState extends State<InitialPageScreenItem> {
                   //botão portfólio
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).pushNamed(AppRoutes.PORTFOLIO_PAGE);
+                      /* Navigator.of(context).pushNamed(AppRoutes.PORTFOLIO_PAGE); */
                     },
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
@@ -186,45 +200,49 @@ class _InitialPageScreenItemState extends State<InitialPageScreenItem> {
               height: resolution.ISdesktop()
                   ? 100
                   : resolution.ISmobile()
-                      ? 70
+                      ? constraints.maxHeight * .15
                       : 0,
               bottom: resolution.ISdesktop()
                   ? 25
                   : resolution.ISmobile()
-                      ? 550
+                      ? constraints.maxHeight *.70
                       : 0,
               left: resolution.ISdesktop()
                   ? 300
                   : resolution.ISmobile()
-                      ? -1
+                      ? constraints.maxWidth *.01
                       : 0,
               child: InkWell(
                 onTap: () {
-                  Navigator.of(context).pushNamed(AppRoutes.PORTFOLIO_PAGE);
+                  /* final Uri _url = Uri.parse(LinksExternos.linkGitHub);
+                  launchUrl(_url); */
                 },
                 child: Image.asset('assets/images/images_buttons/github.png'),
               ),
             ),
-
+            //BOTÃO LINKEDIN
             Positioned(
               height: resolution.ISdesktop()
                   ? 100
                   : resolution.ISmobile()
-                      ? 70
+                      ? constraints.maxHeight * .15
                       : 0,
               bottom: resolution.ISdesktop()
                   ? 25
                   : resolution.ISmobile()
-                      ? 555
+                      ?  constraints.maxHeight *.70
+
                       : 0,
               left: resolution.ISdesktop()
                   ? 850
                   : resolution.ISmobile()
-                      ? 150
+                      ?  constraints.maxWidth *.60
+ 
                       : 0,
               child: InkWell(
                 onTap: () {
-                  Navigator.of(context).pushNamed(AppRoutes.PORTFOLIO_PAGE);
+                 /* final Uri _url = Uri.parse(LinksExternos.linkLinkedin);
+                  launchUrl(_url); */
                 },
                 child: Image.asset('assets/images/images_buttons/linkedin.png'),
               ),
