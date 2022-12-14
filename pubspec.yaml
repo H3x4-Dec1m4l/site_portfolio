@@ -74,9 +74,8 @@ flutter:
     - assets/lang/titles/
     - assets/lang/texts/
     - assets/lang/
-    - assets/images/
-    - assets/images/images_buttons/linkedin.png
-    - assets/images/images_buttons/github.png
+    - assets/images/view_pages/
+    - assets/images/images_buttons/
     - assets/video/
     - assets/video/initialPage_screen.mp4
 

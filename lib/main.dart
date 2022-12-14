@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
-import 'package:my_site_portfolio/view/initialPage_screen.dart';
-import 'package:my_site_portfolio/view/portfolio_page.dart';
+import 'package:my_site_portfolio/pages/ShopApp_Description_Scren.dart';
+import 'package:my_site_portfolio/pages/initialPage_screen.dart';
+import 'package:my_site_portfolio/pages/portfolio_page.dart';
 import './utils/routes.dart';
-import './view/home_page_screen.dart';
+import './pages/home_page_screen.dart';
 import 'package:localization/localization.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -64,6 +65,7 @@ class MyHomePageState extends State<MyHomePage> {
         AppRoutes.INIT_HOME_PAGE: (ctx) => const InitialPageScreen(),
         AppRoutes.HOME_PAGE: (ctx) => const HomePage(), //tentar mais tarde colocar um drawer e colocar o botão de mudarlinguagem aqui
         AppRoutes.PORTFOLIO_PAGE: (ctx) => const PortfolioPage(),
+        AppRoutes.DESC_SHOPAPP: (ctx) => const DescriptionShopAppView(),
       },
     );
   }

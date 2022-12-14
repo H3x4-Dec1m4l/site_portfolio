@@ -14,8 +14,6 @@ class PlatformScreen {
   double? width;
   double? height;
 
-  
-
 // final Function(Widget context) layoutBuilder;
 
   PlatformScreen({
@@ -56,26 +54,30 @@ class PlatformScreen {
     return isTablet = false;
   }
 
-  bool ISlaptop() {
-    if (width! >= 769.00 && width! <= 1270.00) {
-     return isLaptop = true;
-      // log('O aparelho é um Laptop \n Width $width');
-    } /* else if (height! >= 769.00 && height! <= 1279.00) {
-      return isLaptop = true;
-    } */ else {
-      // log('o aparelho não é um laptop \n Width $width');
-    }
-    return isLaptop = false;
-  }
+  // bool ISlaptop() {
+  //   if (width! >= 769.00 && width! <= 1270.00) {
+  //     return isLaptop = true;
+  //     // log('O aparelho é um Laptop \n Width $width');
+  //   } /* else if (height! >= 769.00 && height! <= 1279.00) {
+  //     return isLaptop = true;
+  //   } */
+  //   else {
+  //     // log('o aparelho não é um laptop \n Width $width');
+  //   }
+  //   return isLaptop = false;
+  // }
 
   bool ISdesktop() {
     if (width! >= 1279) {
       return isDesktop = true;
       // log('O aparelho é um desktop \n Width $width');
+    } else if (width! >= 769.00 && width! <= 1270.00) {
+      return isLaptop = true;
     } /* else if (height! > 1279) {
       return isDesktop = true;
       // log('o aparelho está em modo landscape \n Width $width');
-    } */ else {
+    } */
+    else {
       // log('O aparelho não é um desktop \n Width $width');
     }
     return isDesktop = false;

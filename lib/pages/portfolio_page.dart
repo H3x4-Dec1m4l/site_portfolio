@@ -16,7 +16,7 @@ class PortfolioPage extends StatelessWidget {
         child: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/images/fundoUniverse.png'),
+                image: AssetImage('assets/images/view_pages/backgroundtop.png'),
                 fit: BoxFit.cover),
           ),
           child: Column(

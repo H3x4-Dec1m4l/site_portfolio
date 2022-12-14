@@ -61,14 +61,14 @@ class _InitialPageScreenItemState extends State<InitialPageScreenItem> {
             //Botão troca de linguagem
             Positioned(
               height: resolution.ISdesktop()
-                  ? 0
+                  ? constraints.maxHeight * .05
                   : resolution.ISmobile()
                       ? constraints.maxHeight * .08
                       : 0,
               // width: 50,
               top: 25,
               left: resolution.ISdesktop()
-                  ? 1000
+                  ? constraints.maxWidth * .8
                   : resolution.ISmobile()
                       ? constraints.maxWidth * .25 /* 160 */
                       : 20,
@@ -99,7 +99,7 @@ class _InitialPageScreenItemState extends State<InitialPageScreenItem> {
               // height: constraints.maxHeight * .50,
               // width: constraints.maxWidth * .35,
               bottom: resolution.ISdesktop()
-                  ? 200
+                  ? constraints.maxHeight * .29
                   : resolution.ISmobile()
                       ? constraints.maxHeight * .27
                       : 0,
@@ -143,17 +143,17 @@ class _InitialPageScreenItemState extends State<InitialPageScreenItem> {
             Positioned(
               /* height: resolution.ISdesktop()? 300 : resolution.ISmobile() ? 60 : 0, */
               width: resolution.ISdesktop()
-                  ? 400
+                  ? null
                   : resolution.ISmobile()
                       ? constraints.maxHeight * .35 /* 200 */
                       : 0,
               bottom: resolution.ISdesktop()
-                  ? 400
+                  ? constraints.maxHeight * .60
                   : resolution.ISmobile()
                       ? constraints.maxHeight * .0001 /* 60 */
                       : 0,
               right: resolution.ISdesktop()
-                  ? 500
+                  ? constraints.maxWidth *.42 
                   : resolution.ISmobile()
                       ? 50
                       : 0,
@@ -162,7 +162,7 @@ class _InitialPageScreenItemState extends State<InitialPageScreenItem> {
                   //botão me conhecer melhor
                   ElevatedButton(
                     onPressed: () {
-                      /* Navigator.of(context).pushNamed(AppRoutes.HOME_PAGE); */
+                      Navigator.of(context).pushNamed(AppRoutes.HOME_PAGE);
                     },
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
@@ -179,7 +179,7 @@ class _InitialPageScreenItemState extends State<InitialPageScreenItem> {
                   //botão portfólio
                   ElevatedButton(
                     onPressed: () {
-                      /* Navigator.of(context).pushNamed(AppRoutes.PORTFOLIO_PAGE); */
+                      Navigator.of(context).pushNamed(AppRoutes.PORTFOLIO_PAGE);
                     },
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
@@ -198,24 +198,24 @@ class _InitialPageScreenItemState extends State<InitialPageScreenItem> {
             //Botão GitHub
             Positioned(
               height: resolution.ISdesktop()
-                  ? 100
+                  ? constraints.maxHeight * .15
                   : resolution.ISmobile()
-                      ? constraints.maxHeight * .15
+                      ? constraints.maxHeight * .12
                       : 0,
               bottom: resolution.ISdesktop()
-                  ? 25
+                  ? constraints.maxHeight * .03
                   : resolution.ISmobile()
                       ? constraints.maxHeight *.70
                       : 0,
               left: resolution.ISdesktop()
-                  ? 300
+                  ? constraints.maxWidth * .21
                   : resolution.ISmobile()
                       ? constraints.maxWidth *.01
                       : 0,
               child: InkWell(
                 onTap: () {
-                  /* final Uri _url = Uri.parse(LinksExternos.linkGitHub);
-                  launchUrl(_url); */
+                  final Uri _url = Uri.parse(LinksExternos.linkGitHub);
+                  launchUrl(_url);
                 },
                 child: Image.asset('assets/images/images_buttons/github.png'),
               ),
@@ -223,26 +223,26 @@ class _InitialPageScreenItemState extends State<InitialPageScreenItem> {
             //BOTÃO LINKEDIN
             Positioned(
               height: resolution.ISdesktop()
-                  ? 100
+                  ? constraints.maxHeight * .15
                   : resolution.ISmobile()
-                      ? constraints.maxHeight * .15
+                      ? constraints.maxHeight * .12
                       : 0,
               bottom: resolution.ISdesktop()
-                  ? 25
+                  ? constraints.maxHeight * .03
                   : resolution.ISmobile()
-                      ?  constraints.maxHeight *.70
+                      ?  constraints.maxHeight *.702
 
                       : 0,
               left: resolution.ISdesktop()
-                  ? 850
+                  ? constraints.maxWidth * .55
                   : resolution.ISmobile()
-                      ?  constraints.maxWidth *.60
+                      ?  constraints.maxWidth *.55
  
                       : 0,
               child: InkWell(
                 onTap: () {
-                 /* final Uri _url = Uri.parse(LinksExternos.linkLinkedin);
-                  launchUrl(_url); */
+                 final Uri _url = Uri.parse(LinksExternos.linkLinkedin);
+                  launchUrl(_url);
                 },
                 child: Image.asset('assets/images/images_buttons/linkedin.png'),
               ),
