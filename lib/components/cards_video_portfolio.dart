@@ -3,6 +3,7 @@ import 'package:video_player/video_player.dart';
 import '../utils/routes.dart';
 import 'package:localization/localization.dart';
 import 'package:multi_responsive/models/screen_resolution_model.dart';
+import '../Models/responsive_widget.dart';
 
 class CardVideoPortfolio extends StatefulWidget {
   const CardVideoPortfolio({super.key});
@@ -47,11 +48,153 @@ class _CardVideoPortfolioState extends State<CardVideoPortfolio> {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (_, constraints) {
-      var resolution = PlatformScreen(
-          width: constraints.maxWidth, height: constraints.maxHeight);
-      return resolution.ISdesktop()
-          ? SizedBox(
+    return ResponsiveWidget.isSmallScreen(context)
+        ? LayoutBuilder(builder: (_, constraints) {
+            var resolution = PlatformScreen(
+                width: constraints.maxWidth, height: constraints.maxHeight);
+            return Container(
+              width: constraints.maxWidth,
+              height: 1800,
+              child: Column(
+                children: [
+                  //VIDEO FOOATBALL
+                  Container(
+                    height: 300,
+                    width: 500,
+                    child: Card(
+                      color: Colors.black38,
+                      child: Stack(
+                        children: [
+                          ClipRRect(
+                            borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(15),
+                                topRight: Radius.circular(15),
+                                bottomLeft: Radius.circular(20),
+                                bottomRight: Radius.circular(20)),
+                            child: SizedBox.expand(
+                              child: FittedBox(
+                                fit: BoxFit.cover,
+                                child: SizedBox(
+                                  height: _videoPlayerControllerOne
+                                          ?.value.size.height ??
+                                      0,
+                                  width: _videoPlayerControllerOne
+                                          ?.value.size.width ??
+                                      0,
+                                  child: isLoading
+                                      ? Center(
+                                          child: CircularProgressIndicator(),
+                                        )
+                                      : VideoPlayer(_videoPlayerControllerOne!),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  //BOTÃO MAIS INFO FOOATBALL
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(
+                        const Color.fromARGB(134, 0, 155, 202),
+                      ),
+                    ),
+                    child: const Text(
+                      'FootBall Manager',
+                      style: TextStyle(
+                          fontFamily: 'Permanent Marker',
+                          fontSize: 20,
+                          fontWeight: FontWeight.w100),
+                    ),
+                  ),
+                  //DESCRIÇÃO VIDEO FOOATBALL MANAGER PORTFOLIO
+                  Container(
+                    // height: 300,
+                    width: 400,
+                    child: Card(
+                      color: Colors.black12,
+                      child: Text(
+                        'desc_video_1'.i18n(),
+                        style: const TextStyle(
+                            fontFamily: 'Philosopher', fontSize: 20),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  //VIDEO SHOP PORTFOLIO
+                  Container(
+                    height: 300,
+                    width: 500,
+                    child: Card(
+                      color: Colors.black38,
+                      child: ClipRRect(
+                        borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(20),
+                            topRight: Radius.circular(20),
+                            bottomLeft: Radius.circular(20),
+                            bottomRight: Radius.circular(20)),
+                        child: SizedBox.expand(
+                          child: FittedBox(
+                            fit: BoxFit.cover,
+                            child: SizedBox(
+                              height: _videoPlayerControllerTwo
+                                      ?.value.size.height ??
+                                  0,
+                              width:
+                                  _videoPlayerControllerTwo?.value.size.width ??
+                                      0,
+                              child: isLoading
+                                  ? Center(
+                                      child: CircularProgressIndicator(),
+                                    )
+                                  : VideoPlayer(_videoPlayerControllerTwo!),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  //BOTÃO MAIS INFO SHOP
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(
+                        const Color.fromARGB(134, 0, 155, 202),
+                      ),
+                    ),
+                    child: const Text(
+                      'Shop App',
+                      style: TextStyle(
+                          fontFamily: 'Permanent Marker',
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                  //DESCRIÇÃO VIDEO SHOP
+                  Container(
+                    // height: 300,
+                    width: 400,
+                    child: Card(
+                      color: Colors.black12,
+                      child: Text(
+                        'desc_video_2'.i18n(),
+                        style: const TextStyle(
+                            fontFamily: 'Philosopher', fontSize: 20),
+                      ),
+                    ),
+                  ),
+                ], //FINAL COLUMN
+              ),
+            );
+          })
+        : //Resolução PC
+        LayoutBuilder(builder: (context, constraints) {
+            return SizedBox(
               child: Card(
                 color: Colors.black12,
                 child: Column(
@@ -164,7 +307,8 @@ class _CardVideoPortfolioState extends State<CardVideoPortfolio> {
                               ),
                               ElevatedButton(
                                 onPressed: () {
-                                  Navigator.of(context).pushNamed(AppRoutes.DESC_SHOPAPP);
+                                  Navigator.of(context)
+                                      .pushNamed(AppRoutes.DESC_SHOPAPP);
                                 },
                                 style: ButtonStyle(
                                   backgroundColor: MaterialStateProperty.all(
@@ -237,152 +381,7 @@ class _CardVideoPortfolioState extends State<CardVideoPortfolio> {
                   ],
                 ),
               ),
-            )
-          : resolution.ISmobile()
-              ? Container(
-                  width: constraints.maxWidth,
-                  height: 1800,
-                  child: Column(
-                    children: [
-                      //VIDEO FOOATBALL
-                      Container(
-                        height: 300,
-                        width: 500,
-                        child: Card(
-                          color: Colors.black38,
-                          child: Stack(
-                            children: [
-                              ClipRRect(
-                                borderRadius: const BorderRadius.only(
-                                    topLeft: Radius.circular(15),
-                                    topRight: Radius.circular(15),
-                                    bottomLeft: Radius.circular(20),
-                                    bottomRight: Radius.circular(20)),
-                                child: SizedBox.expand(
-                                  child: FittedBox(
-                                    fit: BoxFit.cover,
-                                    child: SizedBox(
-                                      height: _videoPlayerControllerOne
-                                              ?.value.size.height ??
-                                          0,
-                                      width: _videoPlayerControllerOne
-                                              ?.value.size.width ??
-                                          0,
-                                      child: isLoading
-                                          ? Center(
-                                              child:
-                                                  CircularProgressIndicator(),
-                                            )
-                                          : VideoPlayer(
-                                              _videoPlayerControllerOne!),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      //BOTÃO MAIS INFO FOOATBALL
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(
-                            const Color.fromARGB(134, 0, 155, 202),
-                          ),
-                        ),
-                        child: const Text(
-                          'FootBall Manager',
-                          style: TextStyle(
-                              fontFamily: 'Permanent Marker',
-                              fontSize: 20,
-                              fontWeight: FontWeight.w100),
-                        ),
-                      ),
-                      //DESCRIÇÃO VIDEO FOOATBALL MANAGER PORTFOLIO
-                      Container(
-                        // height: 300,
-                        width: 400,
-                        child: Card(
-                          color: Colors.black12,
-                          child: Text(
-                            'desc_video_1'.i18n(),
-                            style: const TextStyle(
-                                fontFamily: 'Philosopher', fontSize: 20),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 40,
-                      ),
-                      //VIDEO SHOP PORTFOLIO
-                      Container(
-                        height: 300,
-                        width: 500,
-                        child: Card(
-                          color: Colors.black38,
-                          child: ClipRRect(
-                            borderRadius: const BorderRadius.only(
-                                topLeft: Radius.circular(20),
-                                topRight: Radius.circular(20),
-                                bottomLeft: Radius.circular(20),
-                                bottomRight: Radius.circular(20)),
-                            child: SizedBox.expand(
-                              child: FittedBox(
-                                fit: BoxFit.cover,
-                                child: SizedBox(
-                                  height: _videoPlayerControllerTwo
-                                          ?.value.size.height ??
-                                      0,
-                                  width: _videoPlayerControllerTwo
-                                          ?.value.size.width ??
-                                      0,
-                                  child: isLoading
-                                      ? Center(
-                                          child: CircularProgressIndicator(),
-                                        )
-                                      : VideoPlayer(_videoPlayerControllerTwo!),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      //BOTÃO MAIS INFO SHOP
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(
-                            const Color.fromARGB(134, 0, 155, 202),
-                          ),
-                        ),
-                        child: const Text(
-                          'Shop App',
-                          style: TextStyle(
-                              fontFamily: 'Permanent Marker',
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500),
-                        ),
-                      ),
-                      //DESCRIÇÃO VIDEO SHOP
-                      Container(
-                        // height: 300,
-                        width: 400,
-                        child: Card(
-                          color: Colors.black12,
-                          child: Text(
-                            'desc_video_2'.i18n(),
-                            style: const TextStyle(
-                                fontFamily: 'Philosopher', fontSize: 20),
-                          ),
-                        ),
-                      ),
-                    ], //FINAL COLUMN
-                  ),
-                )
-              : Container(
-                  child: Center(child: Text('Error')),
-                );
-    });
+            );
+          });
   }
 }

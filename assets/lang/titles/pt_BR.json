@@ -1,14 +1,50 @@
 {
     "_startGlobalKeys-strings-pt_BR":"",
         "change_language":"Change to English",
+        "version":"Copyright © 26 Nov 2022|SITE PESSOAL|Versão Beta 0.4.0",
     "_endtGlobalKeys-strings-pt_BR":"",
 
-    "startInitialPage-titles-en_US": "",
+    "_startInitialPage-titles-pt_BR": "",
     "bridge_to_entry": "Portal de Entrada",
         "get_to_know_me_better": "Me conhecer melhor",
         "see_my_works": "Ver meus trabalhos",
-    "endtInitialPage-titles-en_US": "",
-    
+
+        "_startDrawer":"",
+            "settings":"Configurações",
+            "login":"Entrar",
+            "singup":"Registrar",
+            "Sign_in_with_an_account":"Entrar com uma Conta",
+        "_endDrawer":"",
+
+
+
+        "_startWebsiteFooter-titles-pt_BR":"",
+            "_startAbout":"",
+                "about":"SOBRE",
+                "about_me":"Sobre mim",
+                "about_the_site":"Sobre o site",
+                "current_projects":"Projetos",
+            "_endAbout":"",
+
+            "_startHelp":"",
+                "help":"Ajuda",
+                "services":"Serviços",
+                "evaluation":"Avaliações",
+            "_endHelp":"",
+            "_startMyContacts":"",
+            "my_contacts":"Meus\nContatos",
+            "contactme_followMe":"Contate-Me/Siga-me",
+            "professional":"Profissional",
+            "personal":"Pessoal",
+            "msgErrorEmail":"Não foi possivel abrir o aplicativo de E-mail",
+            "warning":"Por favor não me enviar links desconhecidos ou arquivos suspeitos \n Não irei abrir arquivos que eu considerar suspeitos",
+            "close":"Fechar",
+        "_endMyContacts":"",
+
+
+        "_endtWebsiteFooter-titles-pt_BR":"",
+    "_endtInitialPage-titles-pt_BR": "",
+        
     "_startHomePage-titles-pt_BR":"",
         "title": "Site Pessoal Portfólio",
         "subtitle": "Site Pessoal",
@@ -19,7 +55,9 @@
         "my_portfolio":"Meu Portfólio",
 
         "_startAppShop_desc-titles-pt_BR":"",
-            "shopApp_description": "Descrição Aplicativo Shop",
+            "shopApp_description": "Descrição do Aplicativo Shop",
+            "appProduction":"Produção do App",
+            "appFeatures":"Funcionalidades do App",
         "_endAppShop_desc-titles-pt_BR":"",
         
     "_endPortfolioPage-titles-pt_BR":""

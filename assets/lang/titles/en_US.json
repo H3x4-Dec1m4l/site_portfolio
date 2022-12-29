@@ -1,13 +1,44 @@
 {
     "_startGlobalKeys-strings-en_US":"",
         "change_language": "Trocar Para Português",
+        "version":"Copyright © 26 Nov 2022|PERSONAL WEB SITE|Beta Version 0.4.0",
     "_endtGlobalKeys-strings-en_US":"",
 
-    "startInitialPage-titles-en_US": "",
+    "_startInitialPage-titles-en_US": "",
         "bridge_to_entry": "Bridge to Entry",
         "get_to_know_me_better": "Get To Know Me Better",
         "see_my_works": "See my Works",
-    "endtInitialPage-titles-en_US": "",
+
+        "_startDrawer":"",
+            "settings":"Settings",
+            "login":"Login",
+            "singup":"SingUp",
+            "Sign_in_with_an_account":"Sign in with an account",
+        "_endDrawer":"",
+
+        "startWebsiteFooter-titles-en_US":"",
+            "startAbout":"",
+                "about":"ABOUT",
+                "about_me":"About Me",
+                "about_the_site":"About The Site",
+                "current projects":"projects",
+            "endAbout":"",
+            "_startHelp":"",
+                "help":"Help",
+                "services":"Services",
+                "evaluation":"Evaluation",
+            "_endHelp":"",
+
+            "_startMyContacts":"",
+                "my_contacts":"My Contacts",
+                "contactme_followMe":"Contat Me/Follow Me",
+                "msgErrorEmail":"Could not open email app",
+                "Email_notice":"",
+                "close":"Close",
+            "_endMyContacts":"",
+
+        "endtWebsiteFooter-titles-en_US":"",
+    "_endtInitialPage-titles-en_US": "",
 
     "_startHomePage-titles-en_US":"",
         "title": "Personal Website Portfolio",
@@ -17,7 +48,13 @@
 
     "_startPortfolioPage-titles-en_US":"",
         "my_portfolio":"My Portfolio",
-        "shopApp_description": "App Shop Description", 
+
+        "_startAppShop_desc-titles-pt_BR":"",
+            "shopApp_description": "App Shop Description", 
+            "appProduction":"App Production",
+            "appFeatures":"App Features",
+        "_endAppShop_desc-titles-pt_BR":"",
+
     "_endPortfolioPage-titles-en_US":""
     
     

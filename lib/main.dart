@@ -37,6 +37,7 @@ class MyHomePageState extends State<MyHomePage> {
       'assets/lang/texts'
     ];
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       
       locale: _locale,
       localeResolutionCallback: (locale, supportedLocales) {
