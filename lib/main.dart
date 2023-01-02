@@ -60,7 +60,7 @@ class MyHomePageState extends State<MyHomePage> {
         GlobalCupertinoLocalizations.delegate,
         LocalJsonLocalization.delegate,
       ],
-      title: 'TryPol-y' /* futuro titulo */,
+      title: 'Dev_Reis' /* futuro titulo = Trypol-y*/,
       theme: ThemeData.dark(),
       routes: {
         AppRoutes.INIT_HOME_PAGE: (ctx) => const InitialPageScreen(),

@@ -8,6 +8,76 @@ import 'package:localization/localization.dart';
 import '../utils/linksExternos.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+
+
+
+class TextSearch {
+  
+   static List<InlineSpan> formatText({
+      required String text,
+      required String search,
+      String? route,
+      String textFamily = '',
+      String searchFamily = '',
+      double textSize = 14,
+      double searchSize = 14,
+      GestureRecognizer? recognizer,
+    }) {
+      List<String> parts = text.split(search);
+
+      final List<InlineSpan> formattedText = [];
+      for (int i = 0; i != parts.length; i++) {
+        final part = parts[i];
+        formattedText.add(
+          TextSpan(
+            style: TextStyle(
+                color: Colors.white,
+                fontFamily: textFamily,
+                fontSize: textSize),
+            text: part,
+          ),
+        );
+
+        if (i < parts.length - 1) {
+          formattedText.add(route != null
+              ? TextSpan(
+                  style: TextStyle(
+                      color: Colors.blue,
+                      fontFamily: searchFamily,
+                      fontSize: searchSize),
+                  text: ' $search ',
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      Uri _url = Uri.parse(route);
+                      launchUrl(_url);
+                    },
+                )
+              : TextSpan(
+                  style: TextStyle(
+                      color: Colors.blue,
+                      fontFamily: searchFamily,
+                      fontSize: searchSize),
+                  text: ' $search ',
+                  recognizer: recognizer));
+        }
+      }
+
+      return formattedText;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 // class SearchText{
 //  static List<InlineSpan> formatText(
 //       {required String text, List<String> search = const []}) {
@@ -113,7 +183,7 @@ class SearchTextList extends StatelessWidget {
   }
 }
 
-class SearchTextSpan extends InlineSpan {
+/* class SearchTextSpan extends InlineSpan {
   const SearchTextSpan({
     Key? key,
     required this.search,
@@ -272,3 +342,4 @@ class SearchTextSpan extends InlineSpan {
     throw UnimplementedError();
   }
 }
+ */

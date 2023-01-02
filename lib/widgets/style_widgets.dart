@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class TextBorder extends StatelessWidget {
   const TextBorder({
     Key? key,
+    this.fontFamily,
     required this.text,
     required this.sizeText,
     required this.colorText,
@@ -13,6 +14,7 @@ class TextBorder extends StatelessWidget {
     required this.colorBorder,
   }) : super(key: key);
   final String text;
+  final String? fontFamily;
   final double sizeText;
   final Color colorText;
   final Color colorBorder;
@@ -27,6 +29,7 @@ class TextBorder extends StatelessWidget {
         Text(
           text,
           style: TextStyle(
+            fontFamily: fontFamily,
             fontSize: sizeText,
             color: colorText,
           ),
@@ -34,6 +37,7 @@ class TextBorder extends StatelessWidget {
         Text(
           text,
           style: TextStyle(
+            fontFamily: fontFamily,
             fontSize: sizeText,
             shadows: [
               Shadow(
@@ -83,17 +87,14 @@ class TextSpanBorder extends StatelessWidget {
         RichText(
           text: TextSpan(
             text: textSpan,
-            style: TextStyle(
-              fontSize: sizeTextSpan,
-              color: colorBorder,
-              shadows: [
-                Shadow(
+            style:
+                TextStyle(fontSize: sizeTextSpan, color: colorBorder, shadows: [
+              Shadow(
                 blurRadius: blurRadius,
                 color: colorBorder,
                 offset: Offset(dx, dy),
-                )
-              ]
-            ),
+              )
+            ]),
           ),
         ),
       ],

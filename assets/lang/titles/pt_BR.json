@@ -36,9 +36,14 @@
             "contactme_followMe":"Contate-Me/Siga-me",
             "professional":"Profissional",
             "personal":"Pessoal",
-            "msgErrorEmail":"Não foi possivel abrir o aplicativo de E-mail",
-            "warning":"Por favor não me enviar links desconhecidos ou arquivos suspeitos \n Não irei abrir arquivos que eu considerar suspeitos",
-            "close":"Fechar",
+
+            "_startMsg_errors-tiltes":"",
+                "msgErrorEmail":"Não foi possivel abrir o aplicativo de E-mail",
+                "warning":"Por favor não me enviar links desconhecidos ou arquivos suspeitos \n Não irei abrir arquivos que eu considerar suspeitos",
+                "close":"Fechar",
+            "_endtMsg_errors-tiltes":"",
+
+
         "_endMyContacts":"",
 
 
@@ -58,6 +63,12 @@
             "shopApp_description": "Descrição do Aplicativo Shop",
             "appProduction":"Produção do App",
             "appFeatures":"Funcionalidades do App",
+            "whatI_learned":"O que eu aprendi Fazendo esse Aplicativo",
+            "final_observations":"Observações Finais",
+            "moreInfo":"Mais informaçoes:  ",
+                "whatIsServer":"O que é um servidor? | ",
+                "whatIsAppData":"O que são dados de aplicativos?",
+                "whatIs_API":"o que é uma API",
         "_endAppShop_desc-titles-pt_BR":"",
         
     "_endPortfolioPage-titles-pt_BR":""

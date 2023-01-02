@@ -5,6 +5,7 @@ import '../Models/bottom_bar_column.dart';
 import 'package:localization/localization.dart';
 import '../utils/linksExternos.dart';
 import 'package:url_launcher/url_launcher.dart';
+// import '../widgets/show_dialog.dart';
 
 class FooterWeb extends StatefulWidget {
   const FooterWeb({super.key});

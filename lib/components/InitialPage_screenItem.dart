@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:my_site_portfolio/utils/linksExternos.dart';
 import 'package:my_site_portfolio/utils/routes.dart';
 
-import './footer_site.dart';
+import '../widgets/footer_site.dart';
 import 'package:localization/localization.dart';
 // import 'package:multi_responsive/models/screen_resolution_model.dart';
 import '../Models/responsive_widget.dart';
