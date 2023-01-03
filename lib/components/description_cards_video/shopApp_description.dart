@@ -1,3 +1,5 @@
+// ignore_for_file: no_leading_underscores_for_local_identifiers
+
 import 'dart:developer';
 
 import 'package:flutter/gestures.dart';
@@ -9,6 +11,7 @@ import '../../utils/linksExternos.dart';
 import '../../Models/search_text.dart';
 import '../../Models/responsive_widget.dart';
 import '../../widgets/style_widgets.dart';
+import '../../widgets/footer_site.dart';
 
 class ShoAppDescriptionItem extends StatelessWidget {
   // const name({super.key});
@@ -22,7 +25,7 @@ class ShoAppDescriptionItem extends StatelessWidget {
         : SizedBox(
             child: LayoutBuilder(builder: (_, constraints) {
               return Container(
-                height: 2200,
+                height: 3000,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage(
@@ -67,7 +70,7 @@ class ShoAppDescriptionItem extends StatelessWidget {
                                       route: LinksExternos.cod3rSite,
                                       textFamily: 'Philosopher',
                                       textSize: 16,
-                                      searchSize: 16,
+                                      searchSize: 14,
                                     ).toList(),
                                     TextSpan(
                                         text: 'aprovadoapp.com',
@@ -120,7 +123,7 @@ class ShoAppDescriptionItem extends StatelessWidget {
                                       text: 'app_FeaturesDescription'.i18n(),
                                       textSize: 16,
                                       search: 'Firebase',
-                                      searchSize: 16,
+                                      searchSize: 14,
                                       route: LinksExternos.whatIsFirebase,
                                       textFamily: 'Philosopher'),
                                   //More Info
@@ -139,9 +142,9 @@ class ShoAppDescriptionItem extends StatelessWidget {
                                   ...TextSearch.formatText(
                                       text: 'whatIsAppData'.i18n(),
                                       search: 'dados',
-                                      textSize: 12,
+                                      textSize: 13,
                                       route: LinksExternos.whatIsAppData,
-                                      searchSize: 12,
+                                      searchSize: 13,
                                       searchFamily: 'Permanent Marker')
                                 ],
                               ),
@@ -228,14 +231,13 @@ class ShoAppDescriptionItem extends StatelessWidget {
                                             })
                                     ]),
                               ),
-                             
                             ],
                           ),
                         ),
                       ),
-                       SizedBox(height: 30),
-                       //Considerações finais
-                               TextBorder(
+                      SizedBox(height: 30),
+                      //Considerações finais
+                      TextBorder(
                           text: 'final_observations'.i18n(),
                           sizeText: 32,
                           colorText: Colors.white,
@@ -243,7 +245,7 @@ class ShoAppDescriptionItem extends StatelessWidget {
                           dx: 2,
                           dy: 2,
                           colorBorder: Colors.red),
-                          const Divider(
+                      const Divider(
                         height: 5,
                         thickness: 3,
                         indent: 500,
@@ -255,18 +257,36 @@ class ShoAppDescriptionItem extends StatelessWidget {
                         child: Card(
                           color: Colors.black12,
                           child: Column(
-                           children: [
-                             RichText(
-                              text: TextSpan(children: [
-                                ...TextSearch.formatText(text: 'final_observations-text'.i18n(), search: 'contrato')
-                              ]),
-                             ),
-                             SizedBox(height: 20)
-                           ],
+                            children: [
+                              RichText(
+                                text: TextSpan(children: [
+                                  ...TextSearch.formatText(
+                                      text: 'final_observations-text'.i18n(),
+                                      search: 'contrato',
+                                      textFamily: 'Philosopher',
+                                      textSize: 16,
+                                      searchSize: 14)
+                                ]),
+                              ),
+                              SizedBox(height: 20)
+                            ],
                           ),
-                        ) ,
+                        ),
                       ),
-                      //Lugar onde criarei o Botão de download do App
+                      const SizedBox(height: 40),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.black,
+                          textStyle: const TextStyle(color: Colors.white),
+                        ),
+                        onPressed: () {
+                          Uri _url = Uri.parse(LinksExternos.download_shopApp);
+                          launchUrl(_url);
+                        },
+                        child: Text('download_app'.i18n()),
+                      ),
+                      SizedBox(height:600),
+                      FooterWeb(heightSize: ResponsiveWidget.isLargeScreen(context) ? 250: MediaQuery.of(context).size.height  /3.5  ),
                     ]), //final Column Pai
               );
             }),
@@ -292,3 +312,5 @@ class ShoAppDescriptionItem extends StatelessWidget {
                 //     ],
                 //   ),
                 // ),
+
+
