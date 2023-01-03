@@ -69,7 +69,7 @@ class _InitialPageScreenItemState extends State<InitialPageScreenItem> {
                     // ),
                     //Card Apresentando o meu Site
 
-                    Container(
+                    SizedBox(
                       width: MediaQuery.of(context).size.width * .95,
                       child: Column(
                         children: [

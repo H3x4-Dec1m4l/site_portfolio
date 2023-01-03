@@ -161,7 +161,9 @@ class _CardVideoPortfolioState extends State<CardVideoPortfolio> {
                   ),
                   //BOTÃO MAIS INFO SHOP
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(AppRoutes.DESC_SHOPAPP);
+                    },
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(
                         const Color.fromARGB(134, 0, 155, 202),
