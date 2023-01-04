@@ -1,3 +1,5 @@
+// ignore_for_file: no_leading_underscores_for_local_identifiers
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import '../Models/responsive_widget.dart';
@@ -8,10 +10,13 @@ import 'package:url_launcher/url_launcher.dart';
 // import '../widgets/show_dialog.dart';
 
 class FooterWeb extends StatelessWidget {
-  const FooterWeb({super.key, this.heightSize,});
+  const FooterWeb({
+    super.key,
+    this.heightSize,
+  });
   final double? heightSize;
-  
- Widget build(BuildContext context) {
+
+  Widget build(BuildContext context) {
     String? encodeQueryParameters(Map<String, String> params) {
       return params.entries
           .map((MapEntry<String, String> e) =>
@@ -26,11 +31,11 @@ class FooterWeb extends StatelessWidget {
         'subject': '',
       }),
     );
-    var screenSize = MediaQuery.of(context).size;
+    // var screenSize = MediaQuery.of(context).size;
     return ResponsiveWidget.isSmallScreen(context)
         ? Container(
-            padding: EdgeInsets.all(1),
-            color: Color.fromARGB(174, 38, 50, 56),
+            padding: const EdgeInsets.all(1),
+            color: const Color.fromARGB(174, 38, 50, 56),
             child: Column(
               children: [
                 Row(
@@ -75,7 +80,7 @@ class FooterWeb extends StatelessWidget {
                         RichText(
                           text: TextSpan(
                             text: 'my_contacts'.i18n(),
-                            style: TextStyle(color: Colors.blue),
+                            style: const TextStyle(color: Colors.blue),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
                                 showDialog(
@@ -166,7 +171,7 @@ class FooterWeb extends StatelessWidget {
                               },
                           ),
                         ),
-                        SizedBox(height: 5),
+                       const SizedBox(height: 5),
                       ],
                     ),
                   ],
@@ -186,10 +191,10 @@ class FooterWeb extends StatelessWidget {
             ),
           )
         : Container(
-            width: double.infinity /2,
+            width: double.infinity / 2,
             height: heightSize,
-            padding: EdgeInsets.all(1),
-            color: Color.fromARGB(174, 38, 50, 56),
+            padding: const EdgeInsets.all(1),
+            color: const Color.fromARGB(174, 38, 50, 56),
             child: Column(
               children: [
                 Row(
@@ -202,7 +207,7 @@ class FooterWeb extends StatelessWidget {
                       r1: '//colocar rota',
                       s2: 'about_the_site'.i18n(),
                       r2: '//colocar rota',
-                      s3: 'current_projects'.i18n(),
+                      s3: 'about_contract'.i18n(),
                       r3: '//colocar rota',
                     ),
                     BottomBarColumn(
@@ -211,7 +216,7 @@ class FooterWeb extends StatelessWidget {
                       r1: '//colocar rota',
                       s2: 'evaluation'.i18n(),
                       r2: '//colocar rota',
-                      s3: '', //não definido ainda
+                      s3: 'report_bugs'.i18n(),
                       r3: '',
                     ),
                     BottomBarColumn(
@@ -234,7 +239,7 @@ class FooterWeb extends StatelessWidget {
                         RichText(
                           text: TextSpan(
                             text: 'my_contacts'.i18n(),
-                            style: TextStyle(color: Colors.blue),
+                            style: const TextStyle(color: Colors.blue),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
                                 showDialog(
@@ -325,13 +330,7 @@ class FooterWeb extends StatelessWidget {
                               },
                           ),
                         ),
-
-                        SizedBox(height: 5),
-                        // RichText(
-                        //   text: TextSpan(
-                        //       text:
-                        //           '128, Trymore Road, Delft, MN - 56124'),
-                        // )
+                       const SizedBox(height: 5),
                       ],
                     ),
                   ],
@@ -352,5 +351,3 @@ class FooterWeb extends StatelessWidget {
           );
   }
 }
-
-

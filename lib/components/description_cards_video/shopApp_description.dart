@@ -5,6 +5,7 @@ import 'dart:developer';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:localization/localization.dart';
+import 'package:my_site_portfolio/utils/image_archives.dart';
 import 'package:my_site_portfolio/utils/routes.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../utils/linksExternos.dart';
@@ -27,7 +28,7 @@ class ShoAppDescriptionItem extends StatelessWidget {
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage(
-                          'assets/images/view_pages/backgroundtop.png'),
+                          ''),
                       fit: BoxFit.cover),
                 ),
                 child: Column(
@@ -293,11 +294,11 @@ class ShoAppDescriptionItem extends StatelessWidget {
         : SizedBox(
             child: LayoutBuilder(builder: (_, constraints) {
               return Container(
-                height: 3000,
+                height: 2330,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage(
-                          'assets/images/view_pages/backgroundtop.png'),
+                          ImageArchives.shopDesc),
                       fit: BoxFit.cover),
                 ),
                 child: Column(
@@ -323,7 +324,7 @@ class ShoAppDescriptionItem extends StatelessWidget {
                       //Course_info
                       SizedBox(
                         // height: MediaQuery.of(context).size.height * .30,
-                        width: constraints.maxWidth * .90,
+                        width: constraints.maxWidth * .35,
                         child: Card(
                           color: Colors.black12,
                           child: Column(
@@ -379,7 +380,7 @@ class ShoAppDescriptionItem extends StatelessWidget {
                         color: Colors.red,
                       ),
                       SizedBox(
-                        width: constraints.maxWidth * .90,
+                        width: constraints.maxWidth * .35,
                         child: Card(
                           color: Colors.black12,
                           child: Column(children: [
@@ -439,7 +440,7 @@ class ShoAppDescriptionItem extends StatelessWidget {
                         color: Colors.red,
                       ),
                       SizedBox(
-                        width: constraints.maxWidth * .90,
+                        width: constraints.maxWidth * .35,
                         child: Card(
                           color: Colors.black12,
                           child: Column(
@@ -553,8 +554,8 @@ class ShoAppDescriptionItem extends StatelessWidget {
                         },
                         child: Text('download_app'.i18n()),
                       ),
-                      // SizedBox(height:20),
-                      FooterWeb(heightSize: 50 ),
+                      SizedBox(height: 100),
+                      FooterWeb(heightSize: 250 ),
                     ]), //final Column Pai
               );
             }),
@@ -571,7 +572,7 @@ class ShoAppDescriptionItem extends StatelessWidget {
                 //       Text('Cod3r Link'),
                 //       InkWell(
                 //         onTap: (() {
-                //           Uri _url = Uri.parse('');
+                //           Uri _url = Uri.parse(ImageArchives.shopDesc);
                 //           launchUrl(_url);
                 //         }),
                 //         child: Image.asset(

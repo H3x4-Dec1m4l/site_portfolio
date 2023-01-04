@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:localization/localization.dart';
 import 'package:my_site_portfolio/components/cards_video_portfolio.dart';
+import 'package:my_site_portfolio/utils/image_archives.dart';
 
 class PortfolioPage extends StatelessWidget {
   const PortfolioPage({super.key});
@@ -16,7 +17,7 @@ class PortfolioPage extends StatelessWidget {
         child: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/images/view_pages/backgroundtop.png'),
+                image: AssetImage(ImageArchives.portfolioPage),
                 fit: BoxFit.cover),
           ),
           child: Column(

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:my_site_portfolio/pages/ShopApp_Description_Scren.dart';
-import 'package:my_site_portfolio/pages/initialPage_screen.dart';
-import 'package:my_site_portfolio/pages/portfolio_page.dart';
+import 'package:my_site_portfolio/pages/initial_pageScreen.dart';
+import 'package:my_site_portfolio/pages/portfolio_pageScreen.dart';
 import './utils/routes.dart';
-import './pages/home_page_screen.dart';
+import 'pages/home_pageScreen.dart';
 import 'package:localization/localization.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 

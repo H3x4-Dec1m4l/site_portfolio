@@ -4,6 +4,10 @@
         "version":"Copyright © 26 Nov 2022|SITE PESSOAL|Versão Beta 0.4.2",
     "_endtGlobalKeys-strings-pt_BR":"",
 
+    "_startRoutes-titles-pt_BR":"",
+        "forwarding_page":"/tela_encaminhamento",
+    "_endRoutes-titles-pt_BR":"",
+
     "_startInitialPage-titles-pt_BR": "",
     "bridge_to_entry": "Portal de Entrada",
         "get_to_know_me_better": "Me conhecer melhor",
@@ -23,13 +27,14 @@
                 "about":"SOBRE",
                 "about_me":"Sobre mim",
                 "about_the_site":"Sobre o site",
-                "current_projects":"Projetos",
+                "about_contract":"Contrato",
             "_endAbout":"",
 
             "_startHelp":"",
                 "help":"Ajuda",
                 "services":"Serviços",
                 "evaluation":"Avaliações",
+                "report_bugs":"Reportar Bugs",
             "_endHelp":"",
             "_startMyContacts":"",
             "my_contacts":"Meus\nContatos",

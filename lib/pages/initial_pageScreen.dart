@@ -63,7 +63,7 @@ class _InitialPageScreenState extends State<InitialPageScreen> {
                 ),
               ),
             ),
-            drawer: InitialDrawer(),
+            drawer: const InitialDrawerItem(),
             body: Stack(
               children: [
                 SizedBox.expand(

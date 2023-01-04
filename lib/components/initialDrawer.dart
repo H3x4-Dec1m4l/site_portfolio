@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:localization/localization.dart';
 import 'package:my_site_portfolio/main.dart';
 
-class InitialDrawer extends StatelessWidget {
-  const InitialDrawer({super.key});
+class InitialDrawerItem extends StatelessWidget {
+  const InitialDrawerItem({super.key});
 
   @override
   Widget build(BuildContext context) {
