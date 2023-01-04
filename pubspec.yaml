@@ -36,10 +36,11 @@ dependencies:
   localization: ^2.1.0
   provider: ^6.0.4
   # flutter_web_browser: ^0.17.1
+  get: ^4.6.5
   video_player: ^2.4.8
   url_launcher: ^6.1.7
   crypto: ^3.0.2
-
+  flutter_gif: ^0.0.4
   multi_responsive:
     path: multi_responsive
   # device_info_plus: ^8.0.0
@@ -77,6 +78,7 @@ flutter:
     - assets/lang/
     - assets/images/view_pages/
     - assets/images/images_buttons/
+    - assets/images/images_buttons/Animatted_icons/
     - assets/video/
     - assets/video/initialPage_screen.mp4
 

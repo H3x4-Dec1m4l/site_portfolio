@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:my_site_portfolio/pages/ShopApp_Description_Scren.dart';
+import 'package:my_site_portfolio/pages/forwarding_pageScreen.dart';
 import 'package:my_site_portfolio/pages/initial_pageScreen.dart';
 import 'package:my_site_portfolio/pages/portfolio_pageScreen.dart';
 import './utils/routes.dart';
@@ -66,7 +67,8 @@ class MyHomePageState extends State<MyHomePage> {
         AppRoutes.INIT_HOME_PAGE: (ctx) => const InitialPageScreen(),
         AppRoutes.HOME_PAGE: (ctx) => const HomePage(), //tentar mais tarde colocar um drawer e colocar o botão de mudarlinguagem aqui
         AppRoutes.PORTFOLIO_PAGE: (ctx) => const PortfolioPage(),
-        AppRoutes.DESC_SHOPAPP: (ctx) => const DescriptionShopAppView(),
+        AppRoutes.DESC_SHOPAPP: (ctx) => const DescriptionShopAppPage(),
+        AppRoutes.FORWARDING_PAGE: (ctx) => const ForwardingPageScreen(),
       },
     );
   }

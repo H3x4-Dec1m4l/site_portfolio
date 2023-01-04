@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:localization/localization.dart';
 import 'package:my_site_portfolio/components/cards_video_portfolio.dart';
-import 'package:my_site_portfolio/utils/image_archives.dart';
+import 'package:my_site_portfolio/utils/media_archives.dart';
 
 class PortfolioPage extends StatelessWidget {
   const PortfolioPage({super.key});

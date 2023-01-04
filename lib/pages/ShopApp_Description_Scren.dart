@@ -4,14 +4,14 @@ import 'package:video_player/video_player.dart';
 import '../components/description_cards_video/shopApp_description.dart';
 import '../Models/responsive_widget.dart';
 
-class DescriptionShopAppView extends StatefulWidget {
-  const DescriptionShopAppView({super.key});
+class DescriptionShopAppPage extends StatefulWidget {
+  const DescriptionShopAppPage({super.key});
 
   @override
-  State<DescriptionShopAppView> createState() => _DescriptionShopAppView();
+  State<DescriptionShopAppPage> createState() => _DescriptionShopAppPage();
 }
 
-class _DescriptionShopAppView extends State<DescriptionShopAppView> {
+class _DescriptionShopAppPage extends State<DescriptionShopAppPage> {
   VideoPlayerController? _videoPlayerShop;
 
   @override

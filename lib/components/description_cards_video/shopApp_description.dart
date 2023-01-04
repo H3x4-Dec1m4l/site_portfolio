@@ -5,7 +5,7 @@ import 'dart:developer';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:localization/localization.dart';
-import 'package:my_site_portfolio/utils/image_archives.dart';
+import 'package:my_site_portfolio/utils/media_archives.dart';
 import 'package:my_site_portfolio/utils/routes.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../utils/linksExternos.dart';
