@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_site_portfolio/components/InitialPage_screenItem.dart';
 import 'package:localization/localization.dart';
 import 'package:my_site_portfolio/components/initialDrawer.dart';
+import 'package:my_site_portfolio/utils/media_archives.dart';
 import 'package:video_player/video_player.dart';
 import '../Models/responsive_widget.dart';
 import '../utils/routes.dart';
@@ -18,25 +19,25 @@ class _InitialPageScreenState extends State<InitialPageScreen> {
 
   List _isHovering = [false, false, false, false];
   @override
-  void initState() {
-    super.initState();
-    _initialPageScreen =
-        VideoPlayerController.asset('assets/video/initialPage_screen(2).mp4')
-          ..initialize().then((value) {
-            _initialPageScreen!.setVolume(0);
-            _initialPageScreen!.play();
-            _initialPageScreen!.setLooping(true);
-            setState(() {});
-          });
+  // void initState() {
+  //   super.initState();
+  //   _initialPageScreen =
+  //       VideoPlayerController.network(NetworkVideos.videoBackGround_initialpage)
+  //         ..initialize().then((value) {
+  //           _initialPageScreen!.setVolume(0);
+  //           _initialPageScreen!.play();
+  //           _initialPageScreen!.setLooping(true);
+  //           setState(() {});
+  //         });
 
-    _isHovering;
-  }
+  //   _isHovering;
+  // }
 
-  @override
-  void dispose() {
-    super.dispose();
-    _initialPageScreen!.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   super.dispose();
+  //   _initialPageScreen!.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -64,15 +65,16 @@ class _InitialPageScreenState extends State<InitialPageScreen> {
               ),
             ),
             drawer: const InitialDrawerItem(),
+            
             body: Stack(
               children: [
                 SizedBox.expand(
                   child: FittedBox(
                     fit: BoxFit.cover,
                     child: SizedBox(
-                      height: _initialPageScreen?.value.size.height ?? 0,
-                      width: _initialPageScreen?.value.size.width ?? 0,
-                      child: VideoPlayer(_initialPageScreen!),
+                      // height: _initialPageScreen?.value.size.height ?? 0,
+                      // width: _initialPageScreen?.value.size.width ?? 0,
+                      child: Image.asset(ImageAssets.initial_page_image),
                     ),
                   ),
                 ),
@@ -100,7 +102,8 @@ class _InitialPageScreenState extends State<InitialPageScreen> {
                               });
                             },
                             onTap: () {
-                              Navigator.of(context).pushNamed(AppRoutes.HOME_PAGE);
+                              Navigator.of(context)
+                                  .pushNamed(AppRoutes.HOME_PAGE);
                             },
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
@@ -141,7 +144,8 @@ class _InitialPageScreenState extends State<InitialPageScreen> {
                               });
                             },
                             onTap: () {
-                              Navigator.of(context).pushNamed(AppRoutes.PORTFOLIO_PAGE);
+                              Navigator.of(context)
+                                  .pushNamed(AppRoutes.PORTFOLIO_PAGE);
                             },
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
@@ -176,7 +180,7 @@ class _InitialPageScreenState extends State<InitialPageScreen> {
                           ),
                         ],
                       ),
-                      SizedBox(width: screenSize.width /20),
+                      SizedBox(width: screenSize.width / 20),
                       Expanded(
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -188,7 +192,7 @@ class _InitialPageScreenState extends State<InitialPageScreen> {
                           ],
                         ),
                       ),
-                      SizedBox(width: screenSize.width /50),
+                      SizedBox(width: screenSize.width / 50),
                       //registrar
                       InkWell(
                         onHover: (value) {
@@ -253,18 +257,18 @@ class _InitialPageScreenState extends State<InitialPageScreen> {
                                       _isHovering[3] ? 'Philosopher' : '',
                                   fontSize: _isHovering[3] ? 18 : 14),
                             ),
-                             SizedBox(height: 5),
-                                Visibility(
-                                  maintainAnimation: true,
-                                  maintainState: true,
-                                  maintainSize: true,
-                                  visible: _isHovering[3],
-                                  child: Container(
-                                    height: 2,
-                                    width: 50,
-                                    color: Colors.white,
-                                  ),
-                                )
+                            SizedBox(height: 5),
+                            Visibility(
+                              maintainAnimation: true,
+                              maintainState: true,
+                              maintainSize: true,
+                              visible: _isHovering[3],
+                              child: Container(
+                                height: 2,
+                                width: 50,
+                                color: Colors.white,
+                              ),
+                            )
                           ],
                         ),
                       ),
@@ -279,9 +283,9 @@ class _InitialPageScreenState extends State<InitialPageScreen> {
                   child: FittedBox(
                     fit: BoxFit.cover,
                     child: SizedBox(
-                      height: _initialPageScreen?.value.size.height ?? 0,
-                      width: _initialPageScreen?.value.size.width ?? 0,
-                      child: VideoPlayer(_initialPageScreen!),
+                      // height: _initialPageScreen?.value.size.height ?? 0,
+                      // width: _initialPageScreen?.value.size.width ?? 0,
+                      child:Image.asset(ImageAssets.initial_page_image),
                     ),
                   ),
                 ),

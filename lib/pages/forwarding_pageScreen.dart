@@ -13,7 +13,7 @@ class ForwardingPageScreen extends StatelessWidget {
             body: Container(
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage(ImageArchives.forwarding),
+                    image: AssetImage(ImageAssets.forwarding),
                     fit: BoxFit.cover),
               ),
               child: const SizedBox(

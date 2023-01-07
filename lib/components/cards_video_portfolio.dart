@@ -4,6 +4,7 @@ import '../utils/routes.dart';
 import 'package:localization/localization.dart';
 import 'package:multi_responsive/models/screen_resolution_model.dart';
 import '../Models/responsive_widget.dart';
+import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class CardVideoPortfolio extends StatefulWidget {
   const CardVideoPortfolio({super.key});
@@ -13,38 +14,62 @@ class CardVideoPortfolio extends StatefulWidget {
 }
 
 class _CardVideoPortfolioState extends State<CardVideoPortfolio> {
-  VideoPlayerController? _videoPlayerControllerOne;
-  VideoPlayerController? _videoPlayerControllerTwo;
-  bool isLoading = true;
-  @override
-  void initState() {
-    super.initState();
-    _videoPlayerControllerOne =
-        VideoPlayerController.asset('assets/video/portfolio1.mp4')
-          ..initialize().then((context) {
-            _videoPlayerControllerOne!.setVolume(0);
-            _videoPlayerControllerOne?.play();
-            _videoPlayerControllerOne?.setLooping(true);
-            setState(() {});
-          });
-    _videoPlayerControllerTwo =
-        VideoPlayerController.asset('assets/video/portfolio2.mp4')
-          ..initialize().then((context) {
-            _videoPlayerControllerTwo!.setVolume(0);
-            _videoPlayerControllerTwo!.play();
-            _videoPlayerControllerTwo!.setLooping(true);
-            setState(() {
-              isLoading = false;
-            });
-          });
-  }
+  YoutubePlayerController? _portfolio1;
 
   @override
-  void dispose() {
-    super.dispose();
-    _videoPlayerControllerOne!.dispose();
-    _videoPlayerControllerTwo!.dispose();
-  }
+  // void initState() {
+  //   super.initState();
+  //   _portfolio1 = YoutubePlayerController(
+  //     params: const YoutubePlayerParams(
+
+  //       loop: true,
+
+  //     ),
+
+  //   );
+  //   _portfolio1!.loadVideoById(
+  //       videoId: 'vR-VT2GgF0Y',);
+  //   // _portfolio1!.p
+  // }
+
+  // VideoPlayerController? _videoPlayerControllerOne;
+  // VideoPlayerController? _videoPlayerControllerTwo;
+  // bool isLoading = true;
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   _videoPlayerControllerOne = VideoPlayerController.network(
+  //     'https://www.youtube.com/watch?v=vR-VT2GgF0Y',
+  //     //  closedCaptionFile: _loadCaptions(),
+  //     // videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true),
+  //   )..initialize().then((_) {
+  //       setState(() {
+  //         _videoPlayerControllerOne!.initialize();
+  //         _videoPlayerControllerOne!.play();
+  //         _videoPlayerControllerOne!.setLooping(true);
+  //         _videoPlayerControllerOne!.setVolume(0);
+  //       });
+  //     });
+
+  //   _videoPlayerControllerTwo = VideoPlayerController.network(
+  //     'https://www.youtube.com/watch?v=4F54nvotjvo',
+  //     //  closedCaptionFile: _loadCaptions(),
+  //     // videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true),
+  //   )..initialize().then((value){
+  //     _videoPlayerControllerTwo!.initialize();
+  //         _videoPlayerControllerTwo!.play();
+  //         _videoPlayerControllerTwo!.setLooping(true);
+  //         _videoPlayerControllerTwo!.setVolume(0);
+  //   });
+
+  // }
+
+  // @override
+  // void dispose() {
+  //   super.dispose();
+  //   _videoPlayerControllerOne!.dispose();
+  //   _videoPlayerControllerTwo!.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -75,17 +100,8 @@ class _CardVideoPortfolioState extends State<CardVideoPortfolio> {
                               child: FittedBox(
                                 fit: BoxFit.cover,
                                 child: SizedBox(
-                                  height: _videoPlayerControllerOne
-                                          ?.value.size.height ??
-                                      0,
-                                  width: _videoPlayerControllerOne
-                                          ?.value.size.width ??
-                                      0,
-                                  child: isLoading
-                                      ? Center(
-                                          child: CircularProgressIndicator(),
-                                        )
-                                      : VideoPlayer(_videoPlayerControllerOne!),
+                                  child:
+                                      YoutubePlayer(controller: _portfolio1!),
                                 ),
                               ),
                             ),
@@ -141,19 +157,7 @@ class _CardVideoPortfolioState extends State<CardVideoPortfolio> {
                         child: SizedBox.expand(
                           child: FittedBox(
                             fit: BoxFit.cover,
-                            child: SizedBox(
-                              height: _videoPlayerControllerTwo
-                                      ?.value.size.height ??
-                                  0,
-                              width:
-                                  _videoPlayerControllerTwo?.value.size.width ??
-                                      0,
-                              child: isLoading
-                                  ? Center(
-                                      child: CircularProgressIndicator(),
-                                    )
-                                  : VideoPlayer(_videoPlayerControllerTwo!),
-                            ),
+                            child: SizedBox(),
                           ),
                         ),
                       ),
@@ -213,7 +217,7 @@ class _CardVideoPortfolioState extends State<CardVideoPortfolio> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Container(
-                                height: 300,
+                                height: 550,
                                 width: 500,
                                 child: Stack(
                                   children: [
@@ -223,20 +227,10 @@ class _CardVideoPortfolioState extends State<CardVideoPortfolio> {
                                           topRight: Radius.circular(15),
                                           bottomLeft: Radius.circular(20),
                                           bottomRight: Radius.circular(20)),
-                                      child: SizedBox.expand(
-                                        child: FittedBox(
-                                          fit: BoxFit.cover,
-                                          child: SizedBox(
-                                            height: _videoPlayerControllerOne
-                                                    ?.value.size.height ??
-                                                0,
-                                            width: _videoPlayerControllerOne
-                                                    ?.value.size.width ??
-                                                0,
-                                            child: VideoPlayer(
-                                                _videoPlayerControllerOne!),
-                                          ),
-                                        ),
+                                      child: Column(
+                                        children: <Widget>[
+                                          Container(),
+                                        ],
                                       ),
                                     ),
                                   ],
@@ -260,15 +254,15 @@ class _CardVideoPortfolioState extends State<CardVideoPortfolio> {
                                           child: FittedBox(
                                             fit: BoxFit.cover,
                                             child: SizedBox(
-                                              height: _videoPlayerControllerTwo
-                                                      ?.value.size.height ??
-                                                  0,
-                                              width: _videoPlayerControllerTwo
-                                                      ?.value.size.width ??
-                                                  0,
-                                              child: VideoPlayer(
-                                                  _videoPlayerControllerTwo!),
-                                            ),
+                                                // height: _videoPlayerControllerTwo
+                                                //         ?.value.size.height ??
+                                                //     0,
+                                                // width: _videoPlayerControllerTwo
+                                                //         ?.value.size.width ??
+                                                //     0,
+                                                // child: VideoPlayer(
+                                                //     _videoPlayerControllerTwo!),
+                                                ),
                                           ),
                                         ),
                                       ),

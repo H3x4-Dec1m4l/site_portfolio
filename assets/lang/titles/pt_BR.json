@@ -1,12 +1,15 @@
 {
     "_startGlobalKeys-strings-pt_BR":"",
         "change_language":"Change to English",
-        "version":"Copyright © 26 Nov 2022|SITE PESSOAL|Versão Beta 0.4.2",
+        "version":"Copyright © 26 Nov 2022|SITE PESSOAL|Versão Beta 0.5.0",
+        "soon":"Em breve!",
+        "back":"Voltar",
     "_endtGlobalKeys-strings-pt_BR":"",
 
-    "_startRoutes-titles-pt_BR":"",
-        "forwarding_page":"/tela_encaminhamento",
-    "_endRoutes-titles-pt_BR":"",
+    "_startForwarding-titles-pt_BR":"",
+        "routes":"Rotas do site",
+        "social_networks":"Redes Sociais",
+    "_endForwarding-titles-pt_BR":"",
 
     "_startInitialPage-titles-pt_BR": "",
     "bridge_to_entry": "Portal de Entrada",
