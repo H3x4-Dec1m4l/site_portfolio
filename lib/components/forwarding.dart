@@ -1,6 +1,7 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 // import 'package:flutter_gif/flutter_gif.dart';
 import 'package:my_site_portfolio/Models/responsive_widget.dart';
 import 'package:my_site_portfolio/utils/linksExternos.dart';
@@ -8,6 +9,8 @@ import 'package:my_site_portfolio/utils/media_archives.dart';
 // import 'package:my_site_portfolio/widgets/Animation_Button.dart';
 // import 'package:get/get.dart';
 import 'package:localization/localization.dart';
+import 'package:my_site_portfolio/utils/routes.dart';
+import 'package:my_site_portfolio/widgets/forwarding_routes_widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ForwardingItem extends StatelessWidget {
@@ -28,7 +31,14 @@ class ForwardingItem extends StatelessWidget {
             width: double.infinity,
             child: Column(
               children: [
-                const SizedBox(height: 150),
+                const SizedBox(height: 100),
+                IconButton(
+                  tooltip: 'site_home_page',
+                  iconSize: 60,
+                  onPressed: () {},
+                  icon: Icon(Icons.home_rounded),
+                ),
+                const SizedBox(height: 50),
                 //Linha de rotas e redes sociais
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -55,23 +65,6 @@ class ForwardingItem extends StatelessWidget {
                       ),
                       child: SizedBox.expand(
                         child: TextButton(
-                          onPressed: () {
-                            //function
-                            showDialog(
-                                context: context,
-                                builder: (context) {
-                                  return AlertDialog(
-                                    backgroundColor: Colors.black45,
-                                    content: SizedBox(
-                                      height: 350,
-                                      width: 100,
-                                      child: Column(
-                                        children: const [],
-                                      ),
-                                    ),
-                                  );
-                                });
-                          },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -91,6 +84,38 @@ class ForwardingItem extends StatelessWidget {
                               )
                             ],
                           ),
+                          onPressed: () {
+                            //function
+                            showDialog(
+                                context: context,
+                                builder: (context) {
+                                  return AlertDialog(
+                                    actions: [
+                                      IconButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        icon: const Icon(
+                                            Icons.arrow_back_outlined),
+                                      ),
+                                    ],
+                                    backgroundColor: Colors.black45,
+                                    content: SizedBox(
+                                      height: 350,
+                                      width: 100,
+                                      child: Column(
+                                        children: [
+                                          ForwardingRoutesWidgets(
+                                            text: 'my_portfolio'.i18n(),
+                                            route: AppRoutes.PORTFOLIO_PAGE,
+                                            color: Colors.white,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  );
+                                });
+                          },
                         ),
                       ),
                     ),
@@ -116,71 +141,143 @@ class ForwardingItem extends StatelessWidget {
                       ),
                       child: SizedBox.expand(
                         child: TextButton(
-                            onPressed: () {
-                              showDialog(
-                                  context: context,
-                                  builder: (context) {
-                                    return AlertDialog(
-                                      backgroundColor: Colors.black45,
-                                      content: SingleChildScrollView(
-                                        child: SizedBox(
-                                          height: 1000,
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              .90,
-                                          child: Column(
-                                            // mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.stretch,
-                                            children: [
-                                              InkWell(
-                                                onTap: (){
-                                                  // Uri _url = Uri.parse(LinksExternos.linkProfessionalInsta);
-                                                  // launchUrl(_url);
-                                                  showDialog(context: context, builder: (context){
-                                                    return AlertDialog(
-                                                      backgroundColor: Colors.black54,
-                                                      content: Container(
-                                                        color: Colors.black,
-                                                        child: Text('soon'.i18n()),
-                                                      ),
-                                                      actions: [
-                                                        TextButton(onPressed: (){
-                                                          Navigator.of(context).pop();
-                                                        }, child: Text('back'.i18n()))
-                                                      ],
-                                                    );
-                                                  });
-                                                },
-                                                child: Image.asset(ImageAssets.Instagram_professional_icon)
-                                              )
-                                            ],
-                                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'social_networks'.i18n(),
+                                style: const TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: '',
+                                    fontSize: 20),
+                              ),
+                              SizedBox(
+                                height: 120,
+                                width: 70,
+                                child: Image.asset(
+                                  ImageAssets.icon_socialNetwork,
+                                ),
+                              )
+                            ],
+                          ),
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (context) {
+                                  return AlertDialog(
+                                    backgroundColor: Colors.black45,
+                                    actions: [
+                                      IconButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                          icon: const Icon(
+                                              Icons.arrow_back_outlined)),
+                                    ],
+                                    content: SingleChildScrollView(
+                                      child: SizedBox(
+                                        height: 1800,
+                                        child: Column(
+                                          children: [
+                                            //BOTÃO INSTAGRAM PROFISSIONAL
+                                            InkWell(
+                                              child: SizedBox(
+                                                child: Image.asset(
+                                                  ImageAssets
+                                                      .Instagram_professional_icon,
+                                                ),
+                                              ),
+                                              onTap: () {
+                                                // Uri _url = Uri.parse(LinksExternos.linkProfessionalInsta);
+                                                // launchUrl(_url);
+                                                showDialog(
+                                                    context: context,
+                                                    builder: (context) {
+                                                      return AlertDialog(
+                                                        backgroundColor:
+                                                            Color.fromARGB(
+                                                                246, 0, 0, 0),
+                                                        content: Container(
+                                                          color: Colors.black,
+                                                          child: Text(
+                                                              'soon'.i18n()),
+                                                        ),
+                                                        actions: [
+                                                          TextButton(
+                                                              onPressed: () {
+                                                                Navigator.of(
+                                                                        context)
+                                                                    .pop();
+                                                              },
+                                                              child: Text('back'
+                                                                  .i18n()))
+                                                        ],
+                                                      );
+                                                    });
+                                              },
+                                            ),
+
+                                            // BOTÃO INSTAGRAM PESSOAL
+                                            InkWell(
+                                              child: SizedBox(
+                                                child: Image.asset(
+                                                  ImageAssets
+                                                      .instagram_personal_icon,
+                                                ),
+                                              ),
+                                              onTap: () {
+                                                Uri _url = Uri.parse(
+                                                    LinksExternos
+                                                        .linkPersonalInsta);
+                                                launchUrl(_url);
+                                              },
+                                            ),
+
+                                            //BOTÃO PÁGINA FACEBOOK
+                                            InkWell(
+                                              child: SizedBox(
+                                                child: Image.asset(
+                                                  ImageAssets
+                                                      .facebook_page_icon,
+                                                ),
+                                              ),
+                                              onTap: () {
+                                                // Uri _url = Uri.parse(LinksExternos.linkProfessionalInsta);
+                                                // launchUrl(_url);
+                                                showDialog(
+                                                    context: context,
+                                                    builder: (context) {
+                                                      return AlertDialog(
+                                                        backgroundColor:
+                                                            Color.fromARGB(
+                                                                246, 0, 0, 0),
+                                                        content: Container(
+                                                          color: Colors.black,
+                                                          child: Text(
+                                                              'soon'.i18n()),
+                                                        ),
+                                                        actions: [
+                                                          TextButton(
+                                                              onPressed: () {
+                                                                Navigator.of(
+                                                                        context)
+                                                                    .pop();
+                                                              },
+                                                              child: Text('back'
+                                                                  .i18n()))
+                                                        ],
+                                                      );
+                                                    });
+                                              },
+                                            ),
+                                          ],
                                         ),
                                       ),
-                                    );
-                                  });
-                            },
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'social_networks'.i18n(),
-                                  style: const TextStyle(
-                                      color: Colors.white,
-                                      fontFamily: '',
-                                      fontSize: 20),
-                                ),
-                                SizedBox(
-                                  height: 120,
-                                  width: 70,
-                                  child: Image.asset(
-                                    ImageAssets.icon_socialNetwork,
-                                  ),
-                                )
-                              ],
-                            )),
+                                    ),
+                                  );
+                                });
+                          },
+                        ),
                       ),
                     ),
                   ],

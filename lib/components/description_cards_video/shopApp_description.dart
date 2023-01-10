@@ -28,7 +28,7 @@ class ShoAppDescriptionItem extends StatelessWidget {
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage(
-                          ''),
+                          ImageAssets.backgroundShopDesc),
                       fit: BoxFit.cover),
                 ),
                 child: Column(
@@ -298,7 +298,7 @@ class ShoAppDescriptionItem extends StatelessWidget {
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage(
-                          ImageAssets.shopDesc),
+                          ImageAssets.backgroundShopDesc),
                       fit: BoxFit.cover),
                 ),
                 child: Column(

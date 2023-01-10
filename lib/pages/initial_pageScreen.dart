@@ -74,7 +74,7 @@ class _InitialPageScreenState extends State<InitialPageScreen> {
                     child: SizedBox(
                       // height: _initialPageScreen?.value.size.height ?? 0,
                       // width: _initialPageScreen?.value.size.width ?? 0,
-                      child: Image.asset(ImageAssets.initial_page_image),
+                      child: Image.asset(ImageAssets.backgroundInitialPage),
                     ),
                   ),
                 ),
@@ -285,7 +285,7 @@ class _InitialPageScreenState extends State<InitialPageScreen> {
                     child: SizedBox(
                       // height: _initialPageScreen?.value.size.height ?? 0,
                       // width: _initialPageScreen?.value.size.width ?? 0,
-                      child:Image.asset(ImageAssets.initial_page_image),
+                      child:Image.asset(ImageAssets.backgroundInitialPage),
                     ),
                   ),
                 ),

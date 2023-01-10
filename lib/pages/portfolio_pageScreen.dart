@@ -17,11 +17,11 @@ class PortfolioPage extends StatelessWidget {
         child: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage(ImageAssets.portfolioPage),
+                image: AssetImage(ImageAssets.backgroundPortfolioPage),
                 fit: BoxFit.cover),
           ),
           child: Column(
-            children: const <Widget>[
+            children:  <Widget>[
               CardVideoPortfolio(),
             ],
           ),

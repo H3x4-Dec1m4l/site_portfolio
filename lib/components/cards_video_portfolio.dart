@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:my_site_portfolio/utils/media_archives.dart';
 import 'package:video_player/video_player.dart';
 import '../utils/routes.dart';
 import 'package:localization/localization.dart';
 import 'package:multi_responsive/models/screen_resolution_model.dart';
 import '../Models/responsive_widget.dart';
-import 'package:youtube_player_iframe/youtube_player_iframe.dart';
+// import 'package:carousel_slider/carousel_slider.dart';
+// import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class CardVideoPortfolio extends StatefulWidget {
   const CardVideoPortfolio({super.key});
@@ -14,9 +16,8 @@ class CardVideoPortfolio extends StatefulWidget {
 }
 
 class _CardVideoPortfolioState extends State<CardVideoPortfolio> {
-  YoutubePlayerController? _portfolio1;
+  // YoutubePlayerController? _portfolio1;
 
-  @override
   // void initState() {
   //   super.initState();
   //   _portfolio1 = YoutubePlayerController(
@@ -32,19 +33,19 @@ class _CardVideoPortfolioState extends State<CardVideoPortfolio> {
   //   // _portfolio1!.p
   // }
 
-  // VideoPlayerController? _videoPlayerControllerOne;
-  // VideoPlayerController? _videoPlayerControllerTwo;
-  // bool isLoading = true;
+  VideoPlayerController? _videoPlayerControllerOne;
+  VideoPlayerController? _videoPlayerControllerTwo;
+  bool isLoading = true;
   // @override
   // void initState() {
-  //   super.initState();
-  //   _videoPlayerControllerOne = VideoPlayerController.network(
-  //     'https://www.youtube.com/watch?v=vR-VT2GgF0Y',
+  //   _videoPlayerControllerOne = VideoPlayerController.asset(
+  //     'assets/video/portfolio2.mp4',
   //     //  closedCaptionFile: _loadCaptions(),
   //     // videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true),
   //   )..initialize().then((_) {
+
   //       setState(() {
-  //         _videoPlayerControllerOne!.initialize();
+  //         // _videoPlayerControllerOne!.initialize();
   //         _videoPlayerControllerOne!.play();
   //         _videoPlayerControllerOne!.setLooping(true);
   //         _videoPlayerControllerOne!.setVolume(0);
@@ -55,13 +56,13 @@ class _CardVideoPortfolioState extends State<CardVideoPortfolio> {
   //     'https://www.youtube.com/watch?v=4F54nvotjvo',
   //     //  closedCaptionFile: _loadCaptions(),
   //     // videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true),
-  //   )..initialize().then((value){
-  //     _videoPlayerControllerTwo!.initialize();
-  //         _videoPlayerControllerTwo!.play();
-  //         _videoPlayerControllerTwo!.setLooping(true);
-  //         _videoPlayerControllerTwo!.setVolume(0);
-  //   });
-
+  //   )..initialize().then((value) {
+  //       // _videoPlayerControllerTwo!.initialize();
+  //       _videoPlayerControllerTwo!.play();
+  //       _videoPlayerControllerTwo!.setLooping(true);
+  //       _videoPlayerControllerTwo!.setVolume(0);
+  //     });
+  //   super.initState();
   // }
 
   // @override
@@ -83,33 +84,30 @@ class _CardVideoPortfolioState extends State<CardVideoPortfolio> {
               child: Column(
                 children: [
                   //VIDEO FOOATBALL
-                  Container(
-                    height: 300,
-                    width: 500,
-                    child: Card(
-                      color: Colors.black38,
-                      child: Stack(
-                        children: [
-                          ClipRRect(
-                            borderRadius: const BorderRadius.only(
-                                topLeft: Radius.circular(15),
-                                topRight: Radius.circular(15),
-                                bottomLeft: Radius.circular(20),
-                                bottomRight: Radius.circular(20)),
-                            child: SizedBox.expand(
-                              child: FittedBox(
-                                fit: BoxFit.cover,
-                                child: SizedBox(
-                                  child:
-                                      YoutubePlayer(controller: _portfolio1!),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  // Container(
+                  //   height: 300,
+                  //   width: 500,
+                  //   child: Card(
+                  //     color: Colors.black38,
+                  //     child: Stack(
+                  //       children: [
+                  //         ClipRRect(
+                  //           borderRadius: const BorderRadius.only(
+                  //               topLeft: Radius.circular(15),
+                  //               topRight: Radius.circular(15),
+                  //               bottomLeft: Radius.circular(20),
+                  //               bottomRight: Radius.circular(20)),
+                  //           child: SizedBox.expand(
+                  //             child: FittedBox(
+                  //               fit: BoxFit.cover,
+                  //               child: SizedBox(),
+                  //             ),
+                  //           ),
+                  //         ),
+                  //       ],
+                  //     ),
+                  //   ),
+                  // ),
                   //BOTÃO MAIS INFO FOOATBALL
                   ElevatedButton(
                     onPressed: () {},
@@ -143,26 +141,26 @@ class _CardVideoPortfolioState extends State<CardVideoPortfolio> {
                     height: 40,
                   ),
                   //VIDEO SHOP PORTFOLIO
-                  Container(
-                    height: 300,
-                    width: 500,
-                    child: Card(
-                      color: Colors.black38,
-                      child: ClipRRect(
-                        borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(20),
-                            topRight: Radius.circular(20),
-                            bottomLeft: Radius.circular(20),
-                            bottomRight: Radius.circular(20)),
-                        child: SizedBox.expand(
-                          child: FittedBox(
-                            fit: BoxFit.cover,
-                            child: SizedBox(),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  // Container(
+                  //   height: 300,
+                  //   width: 500,
+                  //   child: Card(
+                  //     color: Colors.black38,
+                  //     child: ClipRRect(
+                  //       borderRadius: const BorderRadius.only(
+                  //           topLeft: Radius.circular(20),
+                  //           topRight: Radius.circular(20),
+                  //           bottomLeft: Radius.circular(20),
+                  //           bottomRight: Radius.circular(20)),
+                  //       child: SizedBox.expand(
+                  //         child: FittedBox(
+                  //           fit: BoxFit.cover,
+                  //           child: SizedBox(),
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
                   //BOTÃO MAIS INFO SHOP
                   ElevatedButton(
                     onPressed: () {
@@ -201,178 +199,104 @@ class _CardVideoPortfolioState extends State<CardVideoPortfolio> {
         : //Resolução PC
         LayoutBuilder(builder: (context, constraints) {
             return SizedBox(
+              height: 1000,
               child: Card(
                 color: Colors.black12,
                 child: Column(
-                  children: [
-                    Container(
-                      width: double.infinity,
-                      height: 1800,
-                      child: Column(
-                        // mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        // crossAxisAlignment: CrossAxisAlignment.end,
-                        children: <Widget>[
-                          //Video portfolio Fooatball_Manager
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                height: 550,
-                                width: 500,
-                                child: Stack(
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: const BorderRadius.only(
-                                          topLeft: Radius.circular(15),
-                                          topRight: Radius.circular(15),
-                                          bottomLeft: Radius.circular(20),
-                                          bottomRight: Radius.circular(20)),
-                                      child: Column(
-                                        children: <Widget>[
-                                          Container(),
-                                        ],
-                                      ),
+                  // mainAxisAlignment: MainAxisAlignment.start,
+                  // crossAxisAlignment: CrossAxisAlignment.end,
+                  children: <Widget>[
+                    // SizedBox(height: 200,),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        //
+                        SizedBox(
+                          width: 400,
+                          child: Card(
+                            color: Colors.black12,
+                            child: Text(
+                              'desc_video_1'.i18n(),
+                              style: const TextStyle(
+                                  fontFamily: 'Philosopher', fontSize: 16),
+                            ),
+                          ),
+                        ),
+                        //
+                        SizedBox(
+                          width: 400,
+                          child: Card(
+                            color: Colors.black12,
+                            child: Text(
+                              'desc_video_2'.i18n(),
+                              style: const TextStyle(
+                                  fontFamily: 'Philosopher', fontSize: 16),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all(
+                              const Color.fromARGB(134, 0, 155, 202),
+                            ),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.all(20),
+                            child: Row(
+                              children: [
+                                Row(
+                                  children: const [
+                                    Text(
+                                      'FootBall Manager',
+                                      style: TextStyle(
+                                          fontFamily: 'Philosopher',
+                                          fontWeight: FontWeight.w800),
                                     ),
                                   ],
                                 ),
-                              ),
-                              //Video portfolio Shop
-
-                              Container(
-                                height: 300,
-                                width: 500,
-                                child: Stack(
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: const BorderRadius.only(
-                                          topLeft: Radius.circular(20),
-                                          topRight: Radius.circular(20),
-                                          bottomLeft: Radius.circular(20),
-                                          bottomRight: Radius.circular(20)),
-                                      child: Card(
-                                        child: SizedBox.expand(
-                                          child: FittedBox(
-                                            fit: BoxFit.cover,
-                                            child: SizedBox(
-                                                // height: _videoPlayerControllerTwo
-                                                //         ?.value.size.height ??
-                                                //     0,
-                                                // width: _videoPlayerControllerTwo
-                                                //         ?.value.size.width ??
-                                                //     0,
-                                                // child: VideoPlayer(
-                                                //     _videoPlayerControllerTwo!),
-                                                ),
-                                          ),
-                                        ),
-                                      ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.of(context)
+                                .pushNamed(AppRoutes.DESC_SHOPAPP);
+                          },
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all(
+                              const Color.fromARGB(134, 0, 155, 202),
+                            ),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.all(20),
+                            child: Row(
+                              children: [
+                                Row(
+                                  children: const [
+                                    Text(
+                                      'Shop App',
+                                      style: TextStyle(
+                                          fontFamily: 'Philosopher',
+                                          fontWeight: FontWeight.w800),
                                     ),
                                   ],
-                                ),
-                              ),
-                            ],
+                                )
+                              ],
+                            ),
                           ),
-
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              ElevatedButton(
-                                onPressed: () {},
-                                style: ButtonStyle(
-                                  backgroundColor: MaterialStateProperty.all(
-                                    const Color.fromARGB(134, 0, 155, 202),
-                                  ),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsets.all(20),
-                                  child: Row(
-                                    children: [
-                                      Row(
-                                        children: const [
-                                          Text(
-                                            'FootBall Manager',
-                                            style: TextStyle(
-                                                fontFamily: 'Philosopher',
-                                                fontWeight: FontWeight.w800),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              ElevatedButton(
-                                onPressed: () {
-                                  Navigator.of(context)
-                                      .pushNamed(AppRoutes.DESC_SHOPAPP);
-                                },
-                                style: ButtonStyle(
-                                  backgroundColor: MaterialStateProperty.all(
-                                    const Color.fromARGB(134, 0, 155, 202),
-                                  ),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsets.all(20),
-                                  child: Row(
-                                    children: [
-                                      Row(
-                                        children: const [
-                                          Text(
-                                            'Shop App',
-                                            style: TextStyle(
-                                                fontFamily: 'Philosopher',
-                                                fontWeight: FontWeight.w800),
-                                          ),
-                                        ],
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          // SizedBox(height: 200,),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              Column(
-                                children: <Widget>[
-                                  Container(
-                                    // height: 300,
-                                    width: 400,
-                                    child: Card(
-                                      color: Colors.black12,
-                                      child: Text(
-                                        'desc_video_1'.i18n(),
-                                        style: const TextStyle(
-                                            fontFamily: 'Philosopher',
-                                            fontSize: 16),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                children: <Widget>[
-                                  Container(
-                                    // height: 300,
-                                    width: 400,
-                                    child: Card(
-                                      color: Colors.black12,
-                                      child: Text(
-                                        'desc_video_2'.i18n(),
-                                        style: const TextStyle(
-                                            fontFamily: 'Philosopher',
-                                            fontSize: 16),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ],
                 ),

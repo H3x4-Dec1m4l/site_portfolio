@@ -4,14 +4,22 @@ import 'package:provider/provider.dart';
 
 class ImageAssets{
   //images de fundo
-  static const portfolioPage = 'assets/images/view_pages/man_in_the_space.png';
-  static const shopDesc = 'assets/images/view_pages/backgroundtop.png'; 
-  static const forwarding = 'assets/images/view_pages/black_hole_borderYellow.png'; 
-  static const initial_page_image = 'assets/images/view_pages/earth_red.png';
+  static const backgroundPortfolioPage = 'assets/images/view_pages/man_in_the_space.png';
+  static const backgroundShopDesc = 'assets/images/view_pages/backgroundtop.png'; 
+  static const backgroundForwarding = 'assets/images/view_pages/black_hole_borderYellow.png'; 
+  static const backgroundInitialPage = 'assets/images/view_pages/earth_red.png';
+
+//photos cards
+  static const footBallManagerPhoto = 'assets/images/photos/football_manager.png';
+  static const shopPortfoioPhoto = 'assets/images/photos/shop_portfolio.png';
+
+
   //icons
   static const icon_route = 'assets/images/images_buttons/Animatted_icons/placas-de-sinalizacao.png';
   static const icon_socialNetwork = 'assets/images/images_buttons/icon_social_network.png';
   static const Instagram_professional_icon = 'assets/images/images_buttons/instagram_professional_icon.png';
+  static const instagram_personal_icon = 'assets/images/images_buttons/instagram_personal_icon.png';
+  static const facebook_page_icon = 'assets/images/images_buttons/facebook_page_icon.png';
 }
 
 class VideoArchives{
