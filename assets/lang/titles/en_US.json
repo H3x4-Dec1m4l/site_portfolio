@@ -1,7 +1,7 @@
 {
     "_startGlobalKeys-strings-en_US":"",
         "change_language": "Trocar Para Português",
-        "version":"Copyright © 26 Nov 2022|PERSONAL WEB SITE|Beta Version 0.5.0",
+        "version":"Copyright © 26 Nov 2022|PERSONAL WEB SITE|Beta Version 0.6.0",
         "soon":"Soon!",
         "back":"Back",
     "_endtGlobalKeys-strings-en_US":"",
@@ -60,12 +60,23 @@
         "my_portfolio":"My Portfolio",
 
         "_startAppShop_desc-titles-pt_BR":"",
-            "shopApp_description": "App Shop Description", 
-            "appProduction":"App Production",
-            "appFeatures":"App Features",
+        "shopApp_description": "Shop App Description",
+        "appProduction":"App Production",
+        "appFeatures":"App Fatures",
+        "whatI_learned":"What I Learned Making This App",
+        "final_observations":"Final Observations",
+        "download_app": "DOWNLOAD APP",
+        "moreInfo":"More Info:  ",
+            "whatIsServer":"What Is a Server? | ",
+            "whatIsAppData":"What Is App Data?",
+            "whatIs_API":"What Is API?",
         "_endAppShop_desc-titles-pt_BR":"",
 
-    "_endPortfolioPage-titles-en_US":""
+    "_endPortfolioPage-titles-en_US":"",
+
+    "_startSkillsPage-titles-en_US":"",
+    "my_skills":"My Skills",
+    "_endSkillsPage-titles-en_US":""
     
     
 }

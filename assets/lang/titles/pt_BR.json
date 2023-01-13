@@ -1,7 +1,7 @@
 {
     "_startGlobalKeys-strings-pt_BR":"",
         "change_language":"Change to English",
-        "version":"Copyright © 26 Nov 2022|SITE PESSOAL|Versão Beta 0.5.0",
+        "version":"Copyright © 26 Nov 2022|SITE PESSOAL|Versão Beta 0.6.0",
         "soon":"Em breve!",
         "back":"Voltar",
     "_endtGlobalKeys-strings-pt_BR":"",
@@ -81,7 +81,11 @@
                 "whatIs_API":"o que é uma API",
         "_endAppShop_desc-titles-pt_BR":"",
         
-    "_endPortfolioPage-titles-pt_BR":""
+    "_endPortfolioPage-titles-pt_BR":"",
+
+    "_startSkillsPage-titles-en_US":"",
+        "my_skills":"Minhas Habilidades",
+    "_endSkillsPage-titles-en_US":""
     
     
 }

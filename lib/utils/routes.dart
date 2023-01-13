@@ -5,5 +5,6 @@ class AppRoutes{
   static const HOME_PAGE = '/home-page';
   static const PORTFOLIO_PAGE = '/portfolio-page';
   static const DESC_SHOPAPP = '/desc-shopApp';
-  static const FORWARDING_PAGE = '/forwarding_page/';
+  static const SKILL_PAGE = '/my-skills';
+  // static const FORWARDING_PAGE = '/forwarding_page/';
 }

@@ -69,7 +69,7 @@ class ForwardingRoutesWidgets extends StatelessWidget {
             ],
           ),
           onPressed: () {
-            Uri _url = Uri.parse(link!) ;
+           Uri _url =  link == null ? Uri.parse('') : Uri.parse(link!) ;
            route == null ? launchUrl(_url) : Navigator.of(context).pushNamed(route!) ;
           },
         ),

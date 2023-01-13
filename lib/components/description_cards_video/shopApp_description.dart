@@ -24,11 +24,10 @@ class ShoAppDescriptionItem extends StatelessWidget {
         ? SizedBox(
             child: LayoutBuilder(builder: (_, constraints) {
               return Container(
-                height: 3500,
+                height: 2603,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage(
-                          ImageAssets.backgroundShopDesc),
+                      image: AssetImage(ImageAssets.backgroundShopDesc),
                       fit: BoxFit.cover),
                 ),
                 child: Column(
@@ -37,13 +36,14 @@ class ShoAppDescriptionItem extends StatelessWidget {
                       const SizedBox(height: 30),
                       //course_info
                       TextBorder(
-                          text: 'appProduction'.i18n(),
-                          sizeText: 32,
-                          colorText: Colors.white,
-                          blurRadius: 0.1,
-                          dx: 2,
-                          dy: 2,
-                          colorBorder: Colors.red),
+                        text: 'appProduction'.i18n(),
+                        sizeText: 32,
+                        colorText: Colors.white,
+                        blurRadius: 0.1,
+                        dx: 2,
+                        dy: 2,
+                        colorBorder: Colors.red,
+                      ),
                       const Divider(
                         height: 5,
                         thickness: 3,
@@ -284,8 +284,8 @@ class ShoAppDescriptionItem extends StatelessWidget {
                         },
                         child: Text('download_app'.i18n()),
                       ),
-                      SizedBox(height:600),
-                      FooterWeb( ),
+                      SizedBox(height: 100),
+                      FooterWeb(),
                     ]), //final Column Pai
               );
             }),
@@ -297,8 +297,7 @@ class ShoAppDescriptionItem extends StatelessWidget {
                 height: 2330,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage(
-                          ImageAssets.backgroundShopDesc),
+                      image: AssetImage(ImageAssets.backgroundShopDesc),
                       fit: BoxFit.cover),
                 ),
                 child: Column(
@@ -555,7 +554,7 @@ class ShoAppDescriptionItem extends StatelessWidget {
                         child: Text('download_app'.i18n()),
                       ),
                       SizedBox(height: 100),
-                      FooterWeb(heightSize: 250 ),
+                      FooterWeb(heightSize: 250),
                     ]), //final Column Pai
               );
             }),

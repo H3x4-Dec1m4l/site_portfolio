@@ -48,13 +48,13 @@ class _CardApresentationState extends State<CardApresentation> {
                               child: Text(
                                 'change_language'.i18n(),
                                 style:
-                                    TextStyle(fontFamily: 'Permanent Marker'),
+                                  const  TextStyle(fontFamily: 'Permanent Marker'),
                               ),
                             ),
                           ),
-                          SizedBox(height: 30),
+                          const SizedBox(height: 30),
                           //container card#1
-                          Container(
+                          SizedBox(
                             // height: 160,
                             width: 400,
                             child: Card(

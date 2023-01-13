@@ -48,7 +48,7 @@ class FooterWeb extends StatelessWidget {
                       r1: '//colocar rota',
                       s2: 'about_the_site'.i18n(),
                       r2: '//colocar rota',
-                      s3: 'current_projects'.i18n(),
+                      s3: 'about_contract'.i18n(),
                       r3: '//colocar rota',
                     ),
                     BottomBarColumn(

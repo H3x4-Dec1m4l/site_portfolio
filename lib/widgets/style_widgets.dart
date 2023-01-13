@@ -8,16 +8,18 @@ class TextBorder extends StatelessWidget {
     required this.text,
     required this.sizeText,
     required this.colorText,
+    required this.colorBorder,
+    this.fontWeight,
     required this.blurRadius,
     required this.dx,
     required this.dy,
-    required this.colorBorder,
   }) : super(key: key);
   final String text;
   final String? fontFamily;
   final double sizeText;
   final Color colorText;
   final Color colorBorder;
+  final FontWeight? fontWeight;
   final double blurRadius;
   final double dx;
   final double dy;
@@ -31,6 +33,7 @@ class TextBorder extends StatelessWidget {
           style: TextStyle(
             fontFamily: fontFamily,
             fontSize: sizeText,
+            fontWeight: fontWeight,
             color: colorText,
           ),
         ),
@@ -39,6 +42,7 @@ class TextBorder extends StatelessWidget {
           style: TextStyle(
             fontFamily: fontFamily,
             fontSize: sizeText,
+            fontWeight: fontWeight,
             shadows: [
               Shadow(
                 blurRadius: blurRadius,
@@ -87,14 +91,17 @@ class TextSpanBorder extends StatelessWidget {
         RichText(
           text: TextSpan(
             text: textSpan,
-            style:
-                TextStyle(fontSize: sizeTextSpan, color: colorBorder, shadows: [
-              Shadow(
-                blurRadius: blurRadius,
-                color: colorBorder,
-                offset: Offset(dx, dy),
-              )
-            ]),
+            style: TextStyle(
+              fontSize: sizeTextSpan,
+              color: colorBorder,
+              shadows: [
+                Shadow(
+                  blurRadius: blurRadius,
+                  color: colorBorder,
+                  offset: Offset(dx, dy),
+                )
+              ],
+            ),
           ),
         ),
       ],
