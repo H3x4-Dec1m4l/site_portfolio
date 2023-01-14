@@ -1,5 +1,7 @@
 // import 'dart:developer';
 
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:my_site_portfolio/utils/linksExternos.dart';
 import 'package:my_site_portfolio/utils/media_archives.dart';
@@ -12,6 +14,7 @@ import 'package:localization/localization.dart';
 // import 'package:multi_responsive/models/screen_resolution_model.dart';
 import '../Models/responsive_widget.dart';
 import '../widgets/forwarding_routes_widgets.dart';
+import '../Models/safety.dart';
 
 class InitialPageScreenItem extends StatefulWidget {
   const InitialPageScreenItem({super.key});
@@ -23,8 +26,10 @@ class InitialPageScreenItem extends StatefulWidget {
 class _InitialPageScreenItemState extends State<InitialPageScreenItem> {
   @override
   Widget build(BuildContext context) {
+    ResponsiveWidget.printLog(context);
     var screenSize = MediaQuery.of(context).size;
-
+   
+    // log(hash);
     return ResponsiveWidget.isSmallScreen(context)
         ? SingleChildScrollView(
             child: SizedBox(
@@ -105,14 +110,20 @@ class _InitialPageScreenItemState extends State<InitialPageScreenItem> {
                                           children: [
                                             ForwardingRoutesWidgets(
                                               text: 'see_my_works'.i18n(),
-                                              route: AppRoutes.PORTFOLIO_PAGE,
+                                              route: AppRoutes.UNICORN_PAGE,
                                               color: Colors.white,
                                             ),
-                                            SizedBox(height: 10),
+                                           const SizedBox(height: 10),
                                             ForwardingRoutesWidgets(
                                               text: 'get_to_know_me_better'
                                                   .i18n(),
                                               route: AppRoutes.HOME_PAGE,
+                                              color: Colors.white,
+                                            ),
+                                            ForwardingRoutesWidgets(
+                                              text: 'my_skills'
+                                                  .i18n(),
+                                              route: AppRoutes.SKILLS_PAGE,
                                               color: Colors.white,
                                             ),
                                           ],
@@ -394,117 +405,237 @@ class _InitialPageScreenItemState extends State<InitialPageScreenItem> {
               ),
             ),
           )
-        : //Site no PC
-        SingleChildScrollView(
-            child: SizedBox(
-              height: 900,
-              child: Column(
-                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(height: 100),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+        //RESOLUTION NOTBOOKS/TABLETS
+        : ResponsiveWidget.isMediumScreen(context)
+            ? SingleChildScrollView(
+                child: SizedBox(
+                  height: 900,
+                  child: Column(
+                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SizedBox(
-                        width: screenSize.width / 10,
-                      ),
-                      Container(
-                        width: screenSize.width / 4,
-                        child: Card(
-                          color: Colors.black26,
-                          child: Text(
-                            'cardApresentation'.i18n(),
-                            style: TextStyle(
-                                fontSize: 30,
-                                fontFamily: 'Philosopher',
-                                fontWeight: FontWeight.w700),
+                      SizedBox(height: 100),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          SizedBox(
+                            width: screenSize.width / 10,
                           ),
-                        ),
-                      ),
-                      //
-                      Container(
-                        height: 60,
-                        width: MediaQuery.of(context).size.width * .45,
-                        decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(15),
-                              topRight: Radius.circular(15),
-                              bottomLeft: Radius.circular(20),
-                              bottomRight: Radius.circular(20)),
-                          gradient: LinearGradient(
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                            stops: [0.5, 1],
-                            colors: [
-                              Color.fromARGB(255, 73, 69, 11),
-                              Color(0xFF9D4623),
-                            ],
-                          ),
-                        ),
-                        child: SizedBox.expand(
-                          child: TextButton(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'routes'.i18n(),
-                                  style: const TextStyle(
-                                      color: Colors.white,
-                                      fontFamily: '',
-                                      fontSize: 20),
-                                ),
-                                SizedBox(
-                                  child: Image.asset(
-                                    ImageAssets.icon_route,
-                                  ),
-                                  height: 28,
-                                  width: 28,
-                                )
-                              ],
+                          Container(
+                            width: screenSize.width / 4,
+                            child: Card(
+                              color: Colors.black26,
+                              child: Text(
+                                'cardApresentation'.i18n(),
+                                style: TextStyle(
+                                    fontSize: 30,
+                                    fontFamily: 'Philosopher',
+                                    fontWeight: FontWeight.w700),
+                              ),
                             ),
-                            onPressed: () {
-                              //function
-                              showDialog(
-                                  context: context,
-                                  builder: (context) {
-                                    return AlertDialog(
-                                      actions: [
-                                        IconButton(
-                                          onPressed: () {
-                                            Navigator.of(context).pop();
-                                          },
-                                          icon: const Icon(
-                                              Icons.arrow_back_outlined),
-                                        ),
-                                      ],
-                                      backgroundColor: Colors.black45,
-                                      content: SizedBox(
-                                        height: 350,
-                                        width: 100,
-                                        child: Column(
-                                          children: [
-                                            ForwardingRoutesWidgets(
-                                              text: 'my_portfolio'.i18n(),
-                                              route: AppRoutes.PORTFOLIO_PAGE,
-                                              color: Colors.white,
+                          ),
+                          //
+                          Container(
+                            height: 60,
+                            width: MediaQuery.of(context).size.width * .45,
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(15),
+                                  topRight: Radius.circular(15),
+                                  bottomLeft: Radius.circular(20),
+                                  bottomRight: Radius.circular(20)),
+                              gradient: LinearGradient(
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                                stops: [0.5, 1],
+                                colors: [
+                                  Color.fromARGB(255, 251, 236, 195),
+                                  Color(0xFF9D4623),
+                                ],
+                              ),
+                            ),
+                            child: SizedBox.expand(
+                              child: TextButton(
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'routes'.i18n(),
+                                      style: const TextStyle(
+                                          color: Colors.white,
+                                          fontFamily: '',
+                                          fontSize: 20),
+                                    ),
+                                    SizedBox(
+                                      child: Image.asset(
+                                        ImageAssets.icon_route,
+                                      ),
+                                      height: 28,
+                                      width: 28,
+                                    )
+                                  ],
+                                ),
+                                onPressed: () {
+                                  //function
+                                  showDialog(
+                                      context: context,
+                                      builder: (context) {
+                                        return AlertDialog(
+                                          actions: [
+                                            IconButton(
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                              icon: const Icon(
+                                                  Icons.arrow_back_outlined),
                                             ),
                                           ],
-                                        ),
-                                      ),
-                                    );
-                                  });
-                            },
+                                          backgroundColor: Colors.black45,
+                                          content: SizedBox(
+                                            height: 350,
+                                            width: 100,
+                                            child: Column(
+                                              children: [
+                                                ForwardingRoutesWidgets(
+                                                  text: 'my_portfolio'.i18n(),
+                                                  route:
+                                                      AppRoutes.PORTFOLIO_PAGE,
+                                                  color: Colors.white,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        );
+                                      });
+                                },
+                              ),
+                            ),
                           ),
-                        ),
+                        ],
                       ),
+                      //Rodapé do site NOTBOOK/TABLETS
+                      const SizedBox(height: 0),
+                      const FooterWeb(),
                     ],
                   ),
-                  //Rodapé do site PC
-                  const SizedBox(height: 146),
-                  const FooterWeb(),
-                ],
-              ),
-            ),
-          );
+                ),
+              )
+            : //Site no PC
+            SingleChildScrollView(
+                child: SizedBox(
+                  height: 900,
+                  child: Column(
+                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SizedBox(height: 100),
+                      Row(
+                        // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          SizedBox(
+                            width: screenSize.width / 10,
+                          ),
+                          Container(
+                            width: screenSize.width / 4,
+                            child: Card(
+                              color: Colors.black26,
+                              child: Text(
+                                'cardApresentation'.i18n(),
+                                style: const TextStyle(
+                                    fontSize: 30,
+                                    fontFamily: 'Philosopher',
+                                    fontWeight: FontWeight.w700),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                              width: MediaQuery.of(context).size.width / 5),
+                          //
+                          Container(
+                            height: 60,
+                            width: MediaQuery.of(context).size.width * .25,
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(15),
+                                  topRight: Radius.circular(15),
+                                  bottomLeft: Radius.circular(20),
+                                  bottomRight: Radius.circular(20)),
+                              gradient: LinearGradient(
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                                stops: [0.2, 0.2, 1],
+                                colors: [
+                                  Color.fromARGB(255, 251, 236, 195),
+                                  Color.fromARGB(255, 252, 236, 205),
+                                  Color.fromARGB(255, 76, 23, 49),
+                                ],
+                              ),
+                            ),
+                            child: SizedBox.expand(
+                              child: TextButton(
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'routes'.i18n(),
+                                      style: const TextStyle(
+                                          color: Colors.black,
+                                          fontFamily: 'Permanent Marker',
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w700),
+                                    ),
+                                    SizedBox(
+                                      child: Image.asset(
+                                        ImageAssets.icon_route,
+                                      ),
+                                      height: 28,
+                                      width: 28,
+                                    )
+                                  ],
+                                ),
+                                onPressed: () {
+                                  //function
+                                  showDialog(
+                                      context: context,
+                                      builder: (context) {
+                                        return AlertDialog(
+                                          actions: [
+                                            IconButton(
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                              icon: const Icon(
+                                                  Icons.arrow_back_outlined),
+                                            ),
+                                          ],
+                                          backgroundColor: Colors.black45,
+                                          content: SizedBox(
+                                            height: 350,
+                                            width: 100,
+                                            child: Column(
+                                              children: [
+                                                ForwardingRoutesWidgets(
+                                                  text: 'my_skills'.i18n(),
+                                                  route: AppRoutes.SKILLS_PAGE,
+                                                  color: Colors.white,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        );
+                                      });
+                                },
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      //Rodapé do site PC
+                      const SizedBox(height: 100),
+                      const FooterWeb(),
+                    ],
+                  ),
+                ),
+              );
   }
 }

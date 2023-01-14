@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:my_site_portfolio/pages/ShopApp_Description_Scren.dart';
+import 'package:my_site_portfolio/pages/forwarding_pageScreen.dart';
 // import 'package:my_site_portfolio/pages/forwarding_pageScreen.dart';
 import 'package:my_site_portfolio/pages/initial_pageScreen.dart';
 import 'package:my_site_portfolio/pages/portfolio_pageScreen.dart';
@@ -12,11 +13,11 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
   setUrlStrategy(PathUrlStrategy());
-  runApp( const MyHomePage());
+  runApp(  MyHomePage());
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, this.theme}) : super(key: key);
+   MyHomePage({Key? key, this.theme}) : super(key: key);
 
   final ThemeData? theme;
 
@@ -25,6 +26,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class MyHomePageState extends State<MyHomePage> {
+ final routesHash = AppRoutesHash.instance();
   Locale? _locale;
   changeLocale(Locale locale) {
     setState(() {
@@ -69,7 +71,8 @@ class MyHomePageState extends State<MyHomePage> {
         AppRoutes.HOME_PAGE: (ctx) => const HomePage(), //tentar mais tarde colocar um drawer e colocar o botão de mudarlinguagem aqui
         AppRoutes.PORTFOLIO_PAGE: (ctx) => const PortfolioPage(),
         AppRoutes.DESC_SHOPAPP: (ctx) => const DescriptionShopAppPage(),
-        AppRoutes.SKILL_PAGE: (ctx) => const SkillsPage(),
+        AppRoutes.SKILLS_PAGE: (ctx) => const SkillsPage(),
+        AppRoutes.UNICORN_PAGE: (ctx) =>  ForwardingPageScreen(),
         // AppRoutes.FORWARDING_PAGE: (ctx) => const ForwardingPageScreen(),
       },
     );

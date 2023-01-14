@@ -40,6 +40,7 @@ dependencies:
   # youtube_player_iframe: ^4.0.1
   provider: ^6.0.4
   # flutter_web_browser: ^0.17.1
+  timer_builder: ^2.0.0
   get: ^4.6.5
   video_player: ^2.4.8
   url_launcher: ^6.1.7

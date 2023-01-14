@@ -1,5 +1,9 @@
+import 'dart:developer';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:localization/localization.dart';
+import 'package:my_site_portfolio/Models/safety.dart';
 import 'package:my_site_portfolio/main.dart';
 
 class InitialDrawerItem extends StatelessWidget {
@@ -7,6 +11,7 @@ class InitialDrawerItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+   
     var locale = Localizations.localeOf(context);
     return Drawer(
       backgroundColor: Colors.black54,
@@ -75,7 +80,9 @@ class InitialDrawerItem extends StatelessWidget {
             endIndent: 40,
             color: Colors.red,
           ),
-          ElevatedButton(onPressed: () {}, child: Text('login'.i18n())),
+          ElevatedButton(onPressed: () {
+            // RandomHashs.getRandomWord();
+          }, child: Text('login'.i18n())),
           const SizedBox(height: 20),
           ElevatedButton(onPressed: (){}, child: Text('singup'.i18n())),
           const Divider(

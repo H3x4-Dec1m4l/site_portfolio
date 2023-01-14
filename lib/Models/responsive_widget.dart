@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class ResponsiveWidget extends StatelessWidget {
@@ -24,7 +26,9 @@ class ResponsiveWidget extends StatelessWidget {
     return MediaQuery.of(context).size.width >= 800 &&
         MediaQuery.of(context).size.width <= 1200;
   }
-
+static void printLog(BuildContext context){
+  return log('${ MediaQuery.of(context).size.width }') ;
+}
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(

@@ -64,7 +64,7 @@ class _InitialPageScreenState extends State<InitialPageScreen> {
                 ),
               ),
             ),
-            drawer: const InitialDrawerItem(),
+            drawer:  InitialDrawerItem(),
             
             body: Stack(
               children: [
