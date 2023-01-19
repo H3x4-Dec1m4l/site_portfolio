@@ -4,6 +4,7 @@ import 'package:my_site_portfolio/pages/ShopApp_Description_Scren.dart';
 import 'package:my_site_portfolio/pages/forwarding_pageScreen.dart';
 // import 'package:my_site_portfolio/pages/forwarding_pageScreen.dart';
 import 'package:my_site_portfolio/pages/initial_pageScreen.dart';
+import 'package:my_site_portfolio/pages/page_unicorn/auth_corn_page.dart';
 import 'package:my_site_portfolio/pages/portfolio_pageScreen.dart';
 import 'package:my_site_portfolio/pages/skills_page.dart';
 import './utils/routes.dart';
@@ -72,7 +73,7 @@ class MyHomePageState extends State<MyHomePage> {
         AppRoutes.PORTFOLIO_PAGE: (ctx) => const PortfolioPage(),
         AppRoutes.DESC_SHOPAPP: (ctx) => const DescriptionShopAppPage(),
         AppRoutes.SKILLS_PAGE: (ctx) => const SkillsPage(),
-        AppRoutes.UNICORN_PAGE: (ctx) =>  ForwardingPageScreen(),
+        AppRoutes.UNICORN_PAGE: (ctx) =>  AuthCornPage(),
         // AppRoutes.FORWARDING_PAGE: (ctx) => const ForwardingPageScreen(),
       },
     );

@@ -1,4 +1,6 @@
 import 'dart:developer';
+import 'package:my_site_portfolio/components/unicorn_component/quest_auth_corn.dart';
+
 import '../data/list_safety.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:my_site_portfolio/utils/routes.dart';
@@ -10,7 +12,9 @@ import 'dart:async';
 
 class Safety {
   unicorn(BuildContext context) {
-    return Navigator.of(context).pushNamed(AppRoutes.HOME_PAGE);
+    // return Navigator.of(context).pushNamed(AppRoutes.HOME_PAGE);
+
+    return QuestDialog.qShowDialog(context);
   }
 
   int count = 0;

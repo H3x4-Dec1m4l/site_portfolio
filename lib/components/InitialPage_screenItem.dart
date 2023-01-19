@@ -28,7 +28,7 @@ class _InitialPageScreenItemState extends State<InitialPageScreenItem> {
   Widget build(BuildContext context) {
     ResponsiveWidget.printLog(context);
     var screenSize = MediaQuery.of(context).size;
-   
+
     // log(hash);
     return ResponsiveWidget.isSmallScreen(context)
         ? SingleChildScrollView(
@@ -81,9 +81,9 @@ class _InitialPageScreenItemState extends State<InitialPageScreenItem> {
                                       fontSize: 20),
                                 ),
                                 SizedBox(
-                                  child: Image.asset(ImageAssets.icon_route),
                                   height: 28,
                                   width: 28,
+                                  child: Image.asset(ImageAssets.icon_route),
                                 )
                               ],
                             ),
@@ -113,16 +113,16 @@ class _InitialPageScreenItemState extends State<InitialPageScreenItem> {
                                               route: AppRoutes.UNICORN_PAGE,
                                               color: Colors.white,
                                             ),
-                                           const SizedBox(height: 10),
+                                            const SizedBox(height: 20),
                                             ForwardingRoutesWidgets(
                                               text: 'get_to_know_me_better'
                                                   .i18n(),
                                               route: AppRoutes.HOME_PAGE,
                                               color: Colors.white,
                                             ),
+                                            const SizedBox(height: 20),
                                             ForwardingRoutesWidgets(
-                                              text: 'my_skills'
-                                                  .i18n(),
+                                              text: 'my_skills'.i18n(),
                                               route: AppRoutes.SKILLS_PAGE,
                                               color: Colors.white,
                                             ),
@@ -527,14 +527,14 @@ class _InitialPageScreenItemState extends State<InitialPageScreenItem> {
                   child: Column(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SizedBox(height: 100),
+                     const SizedBox(height: 100),
                       Row(
                         // mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           SizedBox(
                             width: screenSize.width / 10,
                           ),
-                          Container(
+                          SizedBox(
                             width: screenSize.width / 4,
                             child: Card(
                               color: Colors.black26,
@@ -585,12 +585,11 @@ class _InitialPageScreenItemState extends State<InitialPageScreenItem> {
                                           fontWeight: FontWeight.w700),
                                     ),
                                     SizedBox(
-                                      child: Image.asset(
-                                        ImageAssets.icon_route,
-                                      ),
                                       height: 28,
                                       width: 28,
-                                    )
+                                      child:
+                                          Image.asset(ImageAssets.icon_route),
+                                    ),
                                   ],
                                 ),
                                 onPressed: () {
@@ -617,6 +616,12 @@ class _InitialPageScreenItemState extends State<InitialPageScreenItem> {
                                                 ForwardingRoutesWidgets(
                                                   text: 'my_skills'.i18n(),
                                                   route: AppRoutes.SKILLS_PAGE,
+                                                  color: Colors.white,
+                                                ),
+                                                const SizedBox(height: 20),
+                                                ForwardingRoutesWidgets(
+                                                  text: 'UNICORN'.i18n(),
+                                                  route: AppRoutes.UNICORN_PAGE,
                                                   color: Colors.white,
                                                 ),
                                               ],
